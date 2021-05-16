@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://www.niccari.net/css/style.css">
+    <link rel="stylesheet" href="https://www.niccari.net/css/fonts.css">
+    
+    <title>niccari.net (from NCAO meets Mesaito&#43;)</title>
+    <link rel="icon" type="image/png" href="https://www.niccari.net/assets/img/favicon.ico" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://www.niccari.net/js/dark.js" defer=""></script>
+    
+
+    
+    <meta property="og:title" content="Azure Blob Storageから取得した動画の、Javascriptからシークできなかった話" />
+<meta property="og:description" content="TL;DR C#のプログラムなどから、Azure Blob Storageに対するRequst Headerのx-ms-versionを2011-08-18以降に設定するとOK
+サーバが206 Patial Contentに対応し、ストリーミング配信されるようになるため" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.niccari.net/posts/20180929/" /><meta property="og:image" content="https://www.niccari.net/assets/img/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-09-29T22:10:00&#43;09:00" />
+<meta property="article:modified_time" content="2018-09-29T22:10:00&#43;09:00" />
+
+
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.niccari.net/assets/img/logo.png"/>
+
+<meta name="twitter:title" content="Azure Blob Storageから取得した動画の、Javascriptからシークできなかった話"/>
+<meta name="twitter:description" content="TL;DR C#のプログラムなどから、Azure Blob Storageに対するRequst Headerのx-ms-versionを2011-08-18以降に設定するとOK
+サーバが206 Patial Contentに対応し、ストリーミング配信されるようになるため"/>
+
+</head>
+
+
+<html>
+<!DOCTYPE html>
+<html>
+
+<body>
+  <header class="site-header">
+
+    <div class="wrapper">
+      <a class="muted small" href="https://www.niccari.net/">niccari.net (from NCAO meets Mesaito&#43;)</a>
+    </div>
+  </header>
+</body>
+
+</html>
+
+<h1>Azure Blob Storageから取得した動画の、Javascriptからシークできなかった話</h1>
+<p class="post-meta"><time itemprop="datePublished">September 29, 2018</time>
+</p>
+<h2 id="tldr-cのプログラムなどからazure-blob-storageに対するrequst-headerのx-ms-versionを2011-08-18以降に設定するとok">TL;DR C#のプログラムなどから、Azure Blob Storageに対するRequst Headerのx-ms-versionを2011-08-18以降に設定するとOK</h2>
+<p>サーバが206 Patial Contentに対応し、ストリーミング配信されるようになるため</p>
+<p>2018/9時点では、Azure Storage ExplorerやAzureポータルではx-ms-versionの変更はできないので、C#にてBlobのプロパティを編集する必要がある</p>
+<p><a href="https://bit.ly/2CZ4yQJ">Windows Azure Blob StorageをProgressive Downloadに最適化させる設定 | メディア with Microsoft</a></p>
+<p>※ 記載時点で2018-03-28が最新：<a href="https://docs.microsoft.com/en-us/rest/api/storageservices/versioning-for-the-azure-storage-services">Versioning for the Azure Storage Services | Microsoft Docs</a></p>
+<p>認証するためのアクセス名、アクセスキーはAzure portalの当該ストレージアカウントの設定 ＞ アクセスキーを指定する。アクセスキーは2種類あるが、どちらを指定してもよい</p>
+<hr>
+<h2 id="やりたかったこと">やりたかったこと</h2>
+<p>Azure Blob Storageから動画を引っ張ってきて、数fpsごとの静止画に対して手作業を行いたかった。そこで、ブラウザから簡単に作業できるよう、html+javascriptでページを作成</p>
+<h2 id="実装したこと">実装したこと</h2>
+<ul>
+<li>上記htmlにvideoタグを埋め込み、videoタグのsrcにBlob上の動画のURLを指定</li>
+<li>videoのメタデータが読み込まれたら(onloadedmetadataイベントが発火したら)フレームを指定するUIを表示</li>
+<li>上記UIにて何フレーム目を表示するか指定すると、対応するフレームの静止画を表示。具体的には、video.currentTimeを指定後、canvasにdrawImage(video, 0, 0)する</li>
+</ul>
+<h2 id="発生した問題">発生した問題</h2>
+<p>動画を初回ロードしたとき、video.currentTimeの値をセットしてもvideo.currentTimeが常に0だった</p>
+<ul>
+<li>videoタグにcontrols属性を付けている場合、再生、一時停止、シーク操作ともにOK。また、ここで再生している限りではvideo.currentTimeが再生位置に更新されていた</li>
+<li>２回目以降にロードしたときは、video.currentTimeを設定できた</li>
+<li>しかし、30秒以上の動画では設定できず</li>
+<li>Google Chrome(69.0.3497.100)で同現象が確認された。一方Safariバージョン12.0 (13606.2.11)では問題なくcurrentTimeを設定できた</li>
+</ul>
+<h2 id="試行錯誤したこと">試行錯誤したこと</h2>
+<ul>
+<li>状況：video.play() → video.currentTimeが所定の時刻に来るまでループ</li>
+<li>仮説：video.stop()すればいけるのでは？</li>
+<li>結果：ループ部分が無限ループになり、ブラウザがハングアップ</li>
+</ul>
+<h2 id="調査した内容">調査した内容</h2>
+<ol>
+<li>video.currentTimeを設定できるときと設定できないときで何が違うのか調査
+<ol>
+<li>ChromeのデベロッパーツールのNetworkで、動画がどう読み込まれているかをチェック</li>
+<li>サーバのレスポンスについて、NG時は200 OK, OK時は206 Partial Content(disk cache)が帰ってきていた</li>
+</ol>
+</li>
+<li>そこで、常に206 Partial Contentが帰るようにすれば設定できるようになるのでは？と判断</li>
+<li>Azure Blob Storageに対し、x-ms-versionを2011-08-18以降に設定することで問題解消</li>
+</ol>
+<h2 id="なぜこれで改善されるか">なぜこれで改善されるか</h2>
+<p><a href="https://stackoverflow.com/a/5421205">StackOverflow</a>で回答されている通り、Google Chromeの仕様上サーバがByte rangeリクエストに対応できていないとサーバからのストリーミングができない。この時、<a href="https://qiita.com/tukiyo320/items/78b7f9a205da5887b40d">ブラウザ側でvideo.currentTimeが無効化される</a></p>
+<p>x-ms-version = 2011-08-18にてAzure Blob Storageはストリーミングに対応(206 Partial Responseが返るようになる)。これによりChromeでもvideo.currentTimeを設定できるようになった</p>
+
+<footer>
+    <div>
+        <h3><a href="https://www.niccari.net/posts">Back to all posts</a></h3>
+    </div>
+    <hr>
+    <p>Go <a href="https://www.niccari.net//index.xml">here</a> for an RSS feed.</p>
+</footer>
+
+</html>

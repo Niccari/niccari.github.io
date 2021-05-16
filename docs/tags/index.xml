@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on niccari.net</title>
+    <link>https://www.niccari.net/tags/</link>
+    <description>Recent content in Tags on niccari.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sat, 29 Sep 2018 22:10:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Blob Storage</title>
+      <link>https://www.niccari.net/tags/azure-blob-storage/</link>
+      <pubDate>Sat, 29 Sep 2018 22:10:00 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/tags/azure-blob-storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Browser</title>
+      <link>https://www.niccari.net/tags/browser/</link>
+      <pubDate>Sat, 29 Sep 2018 22:10:00 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/tags/browser/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html5</title>
+      <link>https://www.niccari.net/tags/html5/</link>
+      <pubDate>Sat, 29 Sep 2018 22:10:00 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/tags/html5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://www.niccari.net/tags/javascript/</link>
+      <pubDate>Sat, 29 Sep 2018 22:10:00 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Streaming</title>
+      <link>https://www.niccari.net/tags/streaming/</link>
+      <pubDate>Sat, 29 Sep 2018 22:10:00 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/tags/streaming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iOS</title>
+      <link>https://www.niccari.net/tags/ios/</link>
+      <pubDate>Tue, 04 Sep 2018 19:12:34 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/tags/ios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Swift</title>
+      <link>https://www.niccari.net/tags/swift/</link>
+      <pubDate>Tue, 04 Sep 2018 19:12:34 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/tags/swift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UITableView</title>
+      <link>https://www.niccari.net/tags/uitableview/</link>
+      <pubDate>Tue, 04 Sep 2018 19:12:34 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/tags/uitableview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>https://www.niccari.net/tags/mac/</link>
+      <pubDate>Sat, 25 Aug 2018 21:23:31 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pdf</title>
+      <link>https://www.niccari.net/tags/pdf/</link>
+      <pubDate>Sat, 25 Aug 2018 21:23:31 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/tags/pdf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Preview</title>
+      <link>https://www.niccari.net/tags/preview/</link>
+      <pubDate>Sat, 25 Aug 2018 21:23:31 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/tags/preview/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
