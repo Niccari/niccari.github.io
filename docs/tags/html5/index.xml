@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>html5 on niccari.net</title>
+    <link>https://www.niccari.net/tags/html5/</link>
+    <description>Recent content in html5 on niccari.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sat, 29 Sep 2018 22:10:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/tags/html5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Blob Storageから取得した動画の、Javascriptからシークできなかった話</title>
+      <link>https://www.niccari.net/posts/20180929/</link>
+      <pubDate>Sat, 29 Sep 2018 22:10:00 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/posts/20180929/</guid>
+      <description>&lt;h2 id=&#34;tldr-cのプログラムなどからazure-blob-storageに対するrequst-headerのx-ms-versionを2011-08-18以降に設定するとok&#34;&gt;TL;DR C#のプログラムなどから、Azure Blob Storageに対するRequst Headerのx-ms-versionを2011-08-18以降に設定するとOK&lt;/h2&gt;
+&lt;p&gt;サーバが206 Patial Contentに対応し、ストリーミング配信されるようになるため&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
