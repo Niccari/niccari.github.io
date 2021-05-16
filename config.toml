@@ -1,0 +1,29 @@
+baseURL = "https://www.niccari.net/"
+languageCode = "ja-jp"
+title = "niccari.net"
+theme = "lekh"
+publishDir = "docs"
+canonifyurls = true
+
+[params]
+Name = "niccari.net (from NCAO meets Mesaito+)"
+About = "Provides web/android app works: [Fractal Visualizer for Web](/fv)"
+Resume = ""
+Email = ""
+PostLimit = 3
+favicon = "favicon.ico"
+images = ["assets/img/logo.png"]
+description = "Provides web/android app works."
+
+[[params.profiles]]
+name = "GitHub"
+url = "https://github.com/niccari"
+
+[[params.profiles]]
+name = "Twitter"
+url = "https://twitter.com/niccari1"
+
+[markup]
+  [markup.highlight]
+    lineNos = true
+
