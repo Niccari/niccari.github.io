@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://www.niccari.net/css/style.css">
+    <link rel="stylesheet" href="https://www.niccari.net/css/fonts.css">
+    
+    <title>niccari.net (from NCAO meets Mesaito&#43;)</title>
+    <link rel="icon" type="image/png" href="https://www.niccari.net/assets/img/favicon.ico" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    
+
+    
+    <meta property="og:title" content="2021.05.31_(作業メモ)_MacBook Air M1でTensorflow/Keras学習テスト" />
+<meta property="og:description" content="やりたいこと
+M1チップ上でTensorFlow/Keras使って物体識別モデルを作る" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.niccari.net/posts/20210531/" /><meta property="og:image" content="https://www.niccari.net/assets/img/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-31T16:54:00&#43;09:00" />
+<meta property="article:modified_time" content="2021-05-31T16:54:00&#43;09:00" />
+
+
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.niccari.net/assets/img/logo.png"/>
+
+<meta name="twitter:title" content="2021.05.31_(作業メモ)_MacBook Air M1でTensorflow/Keras学習テスト"/>
+<meta name="twitter:description" content="やりたいこと
+M1チップ上でTensorFlow/Keras使って物体識別モデルを作る"/>
+
+</head>
+
+
+<html>
+<!DOCTYPE html>
+<html>
+
+<body>
+  <header class="site-header">
+
+    <div class="wrapper">
+      <a class="muted small" href="https://www.niccari.net/">niccari.net (from NCAO meets Mesaito&#43;)</a>
+    </div>
+  </header>
+</body>
+
+</html>
+
+<h1>2021.05.31_(作業メモ)_MacBook Air M1でTensorflow/Keras学習テスト</h1>
+<p class="post-meta"><time itemprop="datePublished">May 31, 2021</time>
+</p>
+<h2 id="やりたいこと">やりたいこと</h2>
+<p>M1チップ上でTensorFlow/Keras使って物体識別モデルを作る</p>
+<h2 id="注意">注意</h2>
+<p>作業メモのため、何かの解決を目的としたメモではない</p>
+<h2 id="環境構築">環境構築</h2>
+<p>miniforgeで仮想環境作って、その中にtensorflow-macos 1.0alpha3をインストール</p>
+<ul>
+<li>miniforgeのarm64版であれば、arm64版の各種ライブラリをそのままインストールできる</li>
+<li>homebrew → pyenv + pipenvインストールして環境構築できなくもないが、arch: arm64で一部ライブラリ(pandasなど)のインストールでつまづくなどハマりどころがある。そのため、当面miniconda使う方が望ましい</li>
+</ul>
+<h2 id="前提">前提</h2>
+<ul>
+<li>functional APIでResNetベースのCNNモデル構築。</li>
+<li>ImageGeneratorでtrain/validation/test画像を用意</li>
+<li>画像は40x40px程度。クラスは6種。</li>
+</ul>
+<h2 id="結果">結果</h2>
+<ul>
+<li>バッチサイズ &gt;= 2でSIGSEGVが発生する。バッチサイズが大きいほどクラッシュ確率が高まる(以下エラーが例。コード見る限り、tensor計算時の型の不整合が発生している？)</li>
+</ul>
+<pre><code>E tensorflow/core/framework/types.cc:101] Unrecognized DataType enum value 57
+</code></pre><ul>
+<li>以下のコマンドでGPUにて回すこともできないこともないが、batch_sizeが2以上だと発散してnanになる可能性が高い。</li>
+</ul>
+<pre><code>from tensorflow.python.compiler.mlcompute import mlcompute
+mlcompute.set_mlc_device(device_name='gpu')
+</code></pre>
+
+<footer>
+    <div>
+        <h3><a href="https://www.niccari.net/posts">Back to all posts</a></h3>
+    </div>
+    <hr>
+    <p>Go <a href="https://www.niccari.net//index.xml">here</a> for an RSS feed.</p>
+</footer>
+
+</html>

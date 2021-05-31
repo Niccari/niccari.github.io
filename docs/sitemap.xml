@@ -2,6 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.niccari.net/posts/20210531/</loc>
+    <lastmod>2021-05-31T16:54:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/categories/</loc>
+    <lastmod>2021-05-31T16:54:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/categories/dev/</loc>
+    <lastmod>2021-05-31T16:54:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/tags/keras/</loc>
+    <lastmod>2021-05-31T16:54:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/tags/macbook-air-m1/</loc>
+    <lastmod>2021-05-31T16:54:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/tags/miniconda/</loc>
+    <lastmod>2021-05-31T16:54:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/</loc>
+    <lastmod>2021-05-31T16:54:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/posts/</loc>
+    <lastmod>2021-05-31T16:54:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/tags/</loc>
+    <lastmod>2021-05-31T16:54:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/tags/tensorflow/</loc>
+    <lastmod>2021-05-31T16:54:00+09:00</lastmod>
+  </url><url>
     <loc>https://www.niccari.net/tags/azure-blob-storage/</loc>
     <lastmod>2018-09-29T22:10:00+09:00</lastmod>
   </url><url>
@@ -11,28 +41,13 @@
     <loc>https://www.niccari.net/tags/browser/</loc>
     <lastmod>2018-09-29T22:10:00+09:00</lastmod>
   </url><url>
-    <loc>https://www.niccari.net/categories/</loc>
-    <lastmod>2018-09-29T22:10:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.niccari.net/categories/dev/</loc>
-    <lastmod>2018-09-29T22:10:00+09:00</lastmod>
-  </url><url>
     <loc>https://www.niccari.net/tags/html5/</loc>
     <lastmod>2018-09-29T22:10:00+09:00</lastmod>
   </url><url>
     <loc>https://www.niccari.net/tags/javascript/</loc>
     <lastmod>2018-09-29T22:10:00+09:00</lastmod>
   </url><url>
-    <loc>https://www.niccari.net/</loc>
-    <lastmod>2018-09-29T22:10:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.niccari.net/posts/</loc>
-    <lastmod>2018-09-29T22:10:00+09:00</lastmod>
-  </url><url>
     <loc>https://www.niccari.net/tags/streaming/</loc>
-    <lastmod>2018-09-29T22:10:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.niccari.net/tags/</loc>
     <lastmod>2018-09-29T22:10:00+09:00</lastmod>
   </url><url>
     <loc>https://www.niccari.net/tags/ios/</loc>
