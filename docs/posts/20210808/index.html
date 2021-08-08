@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://www.niccari.net/css/style.css">
+    <link rel="stylesheet" href="https://www.niccari.net/css/fonts.css">
+    
+    <title>niccari.net (from NCAO meets Mesaito&#43;)</title>
+    <link rel="icon" type="image/png" href="https://www.niccari.net/assets/img/favicon.ico" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    
+
+    
+    <meta property="og:title" content="2021.08.08_google/clasp 2.4.0でpackage.jsonが必要" />
+<meta property="og:description" content="google/clasp 2.4.0では、最低でも空({})のpackage.jsonを作る必要がある。
+もしくは、google/clasp 2.3.1を使うことでclasp動かない問題をバイパスできる。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.niccari.net/posts/20210808/" /><meta property="og:image" content="https://www.niccari.net/assets/img/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-08T18:30:00&#43;09:00" />
+<meta property="article:modified_time" content="2021-08-08T18:30:00&#43;09:00" />
+
+
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.niccari.net/assets/img/logo.png"/>
+
+<meta name="twitter:title" content="2021.08.08_google/clasp 2.4.0でpackage.jsonが必要"/>
+<meta name="twitter:description" content="google/clasp 2.4.0では、最低でも空({})のpackage.jsonを作る必要がある。
+もしくは、google/clasp 2.3.1を使うことでclasp動かない問題をバイパスできる。"/>
+
+</head>
+
+
+<html>
+<!DOCTYPE html>
+<html>
+
+<body>
+  <header class="site-header">
+
+    <div class="wrapper">
+      <a class="muted small" href="https://www.niccari.net/">niccari.net (from NCAO meets Mesaito&#43;)</a>
+    </div>
+  </header>
+</body>
+
+</html>
+
+<h1>2021.08.08_google/clasp 2.4.0でpackage.jsonが必要</h1>
+<p class="post-meta"><time itemprop="datePublished">August 8, 2021</time>
+</p>
+<p>google/clasp 2.4.0では、最低でも空(<code>{}</code>)のpackage.jsonを作る必要がある。</p>
+<p>もしくは、google/clasp 2.3.1を使うことでclasp動かない問題をバイパスできる。</p>
+<h2 id="何が起こったか">何が起こったか</h2>
+<p>google/clasp 2.4.0にて、package.jsonが無いフォルダでclaspコマンドを使用できない。</p>
+<p>以下の通り、package.jsonがないとエラーが発生する。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$</span> <span style="color:#a6e22e">clasp</span>
+<span style="color:#a6e22e">node</span><span style="color:#f92672">:</span><span style="color:#a6e22e">fs</span><span style="color:#f92672">:</span><span style="color:#ae81ff">505</span>
+  <span style="color:#a6e22e">handleErrorFromBinding</span>(<span style="color:#a6e22e">ctx</span>);
+  <span style="color:#f92672">^</span>
+
+Error<span style="color:#f92672">:</span> <span style="color:#a6e22e">ENOENT</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">no</span> <span style="color:#a6e22e">such</span> <span style="color:#a6e22e">file</span> <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">directory</span>, <span style="color:#a6e22e">open</span> <span style="color:#e6db74">&#39;package.json&#39;</span>
+    <span style="color:#a6e22e">at</span> Object.<span style="color:#a6e22e">openSync</span> (<span style="color:#a6e22e">node</span><span style="color:#f92672">:</span><span style="color:#a6e22e">fs</span><span style="color:#f92672">:</span><span style="color:#ae81ff">505</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>)
+    <span style="color:#a6e22e">at</span> Object.<span style="color:#a6e22e">readFileSync</span> (<span style="color:#a6e22e">node</span><span style="color:#f92672">:</span><span style="color:#a6e22e">fs</span><span style="color:#f92672">:</span><span style="color:#ae81ff">401</span><span style="color:#f92672">:</span><span style="color:#ae81ff">35</span>)
+    <span style="color:#a6e22e">at</span> <span style="color:#a6e22e">file</span><span style="color:#f92672">:</span><span style="color:#75715e">///usr/local/lib/node_modules/@google/clasp/node_modules/ts2gas/src/index.js:35:35
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">at</span> <span style="color:#a6e22e">ModuleJob</span>.<span style="color:#a6e22e">run</span> (<span style="color:#a6e22e">node</span><span style="color:#f92672">:</span><span style="color:#a6e22e">internal</span><span style="color:#f92672">/</span><span style="color:#a6e22e">modules</span><span style="color:#f92672">/</span><span style="color:#a6e22e">esm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">module_job</span><span style="color:#f92672">:</span><span style="color:#ae81ff">154</span><span style="color:#f92672">:</span><span style="color:#ae81ff">23</span>)
+    <span style="color:#a6e22e">at</span> <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">Loader</span>.<span style="color:#66d9ef">import</span> (<span style="color:#a6e22e">node</span><span style="color:#f92672">:</span><span style="color:#a6e22e">internal</span><span style="color:#f92672">/</span><span style="color:#a6e22e">modules</span><span style="color:#f92672">/</span><span style="color:#a6e22e">esm</span><span style="color:#f92672">/</span><span style="color:#a6e22e">loader</span><span style="color:#f92672">:</span><span style="color:#ae81ff">177</span><span style="color:#f92672">:</span><span style="color:#ae81ff">24</span>)
+    <span style="color:#a6e22e">at</span> <span style="color:#66d9ef">async</span> Object.<span style="color:#a6e22e">loadESM</span> (<span style="color:#a6e22e">node</span><span style="color:#f92672">:</span><span style="color:#a6e22e">internal</span><span style="color:#f92672">/</span><span style="color:#a6e22e">process</span><span style="color:#f92672">/</span><span style="color:#a6e22e">esm_loader</span><span style="color:#f92672">:</span><span style="color:#ae81ff">68</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>) {
+  <span style="color:#a6e22e">errno</span><span style="color:#f92672">:</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,
+  <span style="color:#a6e22e">syscall</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;open&#39;</span>,
+  <span style="color:#a6e22e">code</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ENOENT&#39;</span>,
+  <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;package.json&#39;</span>
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>後述の通り、依存ライブラリのts2gasに依るのでどの開発環境でも発生する。</p>
+<h2 id="原因について">原因について</h2>
+<p>clasp 2.4.0より、依存ライブラリts2gasのバージョンが3.6.4 → 4.0.0に上がった。</p>
+<p>ts2gas 3.6.4ではts2gasをimport・実行するとpackage.jsonを読むようになっていたが、</p>
+<p>4.0.0では<strong>ts2gasライブラリをimportした時点</strong>でpackage.jsonを読むようになっていた。</p>
+<p><a href="https://github.com/grant/ts2gas/commit/7c8b49d33d914ab505a3ff8763d6d1e4d8f3733f#diff-a2a171449d862fe29692ce031981047d7ab755ae7f84c707aef80701b3ea0c80R79-R80">該当コード箇所(github: ts2gas)</a></p>
+<p><a href="https://github.com/google/clasp/blob/master/src/files.ts">clasp側</a>では、src/files.tsでts2gasをimportするのでエラーとなった※。</p>
+<p>clasp 2.3.1以下では、ts2gasをimportした時点ではpackage.jsonを読んでいなかったのでエラーとならなかった。</p>
+<p>※ 厳密には、src/index.ts → commands/clone, commands/push, commands/pull, commands/status → src/files.tsとimportしている。</p>
+<h2 id="対策">対策</h2>
+<p>clasp 2.4.0のまま使いたい場合、最低でも空(<code>{}</code>)のpackage.jsonを作っておく。</p>
+<p>過去のclaspで問題なければ、2.3.1を利用する。</p>
+<h2 id="参考サイト">参考サイト</h2>
+<p>google/clasp #856: Issue with using clasp after v2.4.0 release
+<a href="https://github.com/google/clasp/issues/856">https://github.com/google/clasp/issues/856</a></p>
+
+<footer>
+    <div>
+        <h3><a href="https://www.niccari.net/posts">Back to all posts</a></h3>
+    </div>
+    <hr>
+    <p>Go <a href="https://www.niccari.net//index.xml">here</a> for an RSS feed.</p>
+</footer>
+
+</html>

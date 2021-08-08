@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>google/clasp on niccari.net</title>
+    <link>https://www.niccari.net/tags/google/clasp/</link>
+    <description>Recent content in google/clasp on niccari.net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language><atom:link href="https://www.niccari.net/tags/google/clasp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2021.08.08_google/clasp 2.4.0でpackage.jsonが必要</title>
+      <link>https://www.niccari.net/posts/20210808/</link>
+      <pubDate>Sun, 08 Aug 2021 18:30:00 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/posts/20210808/</guid>
+      <description>&lt;p&gt;google/clasp 2.4.0では、最低でも空(&lt;code&gt;{}&lt;/code&gt;)のpackage.jsonを作る必要がある。&lt;/p&gt;
+&lt;p&gt;もしくは、google/clasp 2.3.1を使うことでclasp動かない問題をバイパスできる。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
