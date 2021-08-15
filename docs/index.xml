@@ -6,7 +6,17 @@
     <description>Recent content on niccari.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 08 Aug 2021 18:30:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Aug 2021 21:45:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pandas サンプルコード実装</title>
+      <link>https://www.niccari.net/posts/20210815/</link>
+      <pubDate>Sun, 15 Aug 2021 21:45:00 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/posts/20210815/</guid>
+      <description>&lt;p&gt;これまでpython上でデータ解析するときにpandasを使っていたが、&lt;/p&gt;
+&lt;p&gt;理解の確認用に&lt;a href=&#34;https://github.com/Niccari/pandas_processing_example/blob/main/pandas_processing_example.ipynb&#34;&gt;サンプルコード&lt;/a&gt;を実装した。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>(archive) google/clasp 2.4.0でpackage.jsonが必要</title>
       <link>https://www.niccari.net/posts/20210808/</link>
