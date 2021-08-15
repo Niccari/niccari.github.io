@@ -8,12 +8,13 @@
     <language>ja-jp</language>
     <lastBuildDate>Sun, 08 Aug 2021 18:30:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2021.08.08_google/clasp 2.4.0でpackage.jsonが必要</title>
+      <title>(archive) google/clasp 2.4.0でpackage.jsonが必要</title>
       <link>https://www.niccari.net/posts/20210808/</link>
       <pubDate>Sun, 08 Aug 2021 18:30:00 +0900</pubDate>
       
       <guid>https://www.niccari.net/posts/20210808/</guid>
-      <description>&lt;p&gt;google/clasp 2.4.0では、最低でも空(&lt;code&gt;{}&lt;/code&gt;)のpackage.jsonを作る必要がある。&lt;/p&gt;
+      <description>&lt;p&gt;(21.08.15 追記): &lt;strong&gt;google/clasp 2.4.1でfix済み&lt;a href=&#34;https://github.com/google/clasp/releases/tag/v2.4.1&#34;&gt;(#840, #862)&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;google/clasp 2.4.0では、最低でも空(&lt;code&gt;{}&lt;/code&gt;)のpackage.jsonを作る必要がある。&lt;/p&gt;
 &lt;p&gt;もしくは、google/clasp 2.3.1を使うことでclasp動かない問題をバイパスできる。&lt;/p&gt;</description>
     </item>
     
