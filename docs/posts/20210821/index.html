@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://www.niccari.net/css/style.css">
+    <link rel="stylesheet" href="https://www.niccari.net/css/fonts.css">
+    
+    <title>niccari.net (from NCAO meets Mesaito&#43;)</title>
+    <link rel="icon" type="image/png" href="https://www.niccari.net/assets/img/favicon.ico" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    
+
+    
+    <meta property="og:title" content="claspを使ったGAS開発フローまとめ" />
+<meta property="og:description" content="claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き。
+ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要がある。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.niccari.net/posts/20210821/" /><meta property="og:image" content="https://www.niccari.net/assets/img/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-21T14:00:00&#43;09:00" />
+<meta property="article:modified_time" content="2021-08-21T14:00:00&#43;09:00" />
+
+
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.niccari.net/assets/img/logo.png"/>
+
+<meta name="twitter:title" content="claspを使ったGAS開発フローまとめ"/>
+<meta name="twitter:description" content="claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き。
+ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要がある。"/>
+
+</head>
+
+
+<html>
+<!DOCTYPE html>
+<html>
+
+<body>
+  <header class="site-header">
+
+    <div class="wrapper">
+      <a class="muted small" href="https://www.niccari.net/">niccari.net (from NCAO meets Mesaito&#43;)</a>
+    </div>
+  </header>
+</body>
+
+</html>
+
+<h1>claspを使ったGAS開発フローまとめ</h1>
+<p class="post-meta"><time itemprop="datePublished">August 21, 2021</time>
+</p>
+<p>claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き。</p>
+<p>ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要がある。</p>
+<h2 id="gas-claspによる開発構成イメージ">GAS, claspによる開発構成イメージ</h2>
+<p><img src="https://www.niccari.net/assets/img/20210821/gas_clasp_arch.png" alt="GAS, claspおよび関連するサービスの操作イメージ"></p>
+<p>※ claspはnpmによりインストール済みの想定。開発環境の構築周りについてはQiita等ですでに記事があるので省略。</p>
+<p>開発は概ね以下のフローになる。</p>
+<ol start="0">
+<li>
+<p><code>clasp login</code>により、clasp CLIが自身のGoogleアカウントに紐づく形でGASにアクセスできるようにする。これにより、スクリプトのデプロイやプロジェクトの作成・更新、スクリプトのpull/pushができるようになる。</p>
+</li>
+<li>
+<p>GASプロジェクトを新規作成する(clasp create)か、すでにあるプロジェクトを取得(clone)する</p>
+</li>
+<li>
+<p>ローカルでスクリプトを動かせるようにする</p>
+</li>
+</ol>
+<ul>
+<li>2.1. Google Cloud Platform(以後、GCP)でプロジェクトを新規作成し、GASスクリプトに紐付けておく(<a href="https://script.google.com/">スクリプトエディタから、設定画面を通してプロジェクト番号を指定する</a>)</li>
+<li>2.2. GCP上で<a href="https://console.cloud.google.com/apis/credentials/consent">OAuth クライアントID</a>を作成し、秘密鍵(jsonファイル)をダウンロードする。この秘密鍵を使ってGASプロジェクトがGoogleアカウントにアクセスできるようにする(<code>clasp login --creds creds.json</code>)。これにより、<code>clasp run</code>を実行するとローカルでスクリプトを動作できるようになる。</li>
+</ul>
+<ol start="3">
+<li>スクリプトを開発する。</li>
+</ol>
+<ul>
+<li>3.1. リモートのappsscript.jsonをローカルに持ってきたい場合<code>clasp pull</code>する。ただし、すでにトランスパイルしたスクリプトがあるとそれらもpullされる。</li>
+<li>3.2. ローカルで開発したスクリプトをリモートに写したい場合、<code>clasp push</code>する。</li>
+<li>3.3. ローカルでスクリプトを実行・テストしたいときは<code>clasp run</code>する(※)。実行ログは<code>clasp logs</code>で見ることができる。</li>
+</ul>
+<ol start="4">
+<li>
+<p>コードがFIXした段階でコードをpush、deployする。</p>
+</li>
+<li>
+<p>git等でバージョン管理している場合、適宜スクリプトをcommitする。ただし、.crasprc.jsonは機密情報なので.gitignoreで除外しておくこと。</p>
+</li>
+</ol>
+<p>※ 最新のスクリプトを実行したい場合、スクリプトをpushしておく必要がある。また、スクリプトエディタで実行可能APIに設定する必要がある。</p>
+<h2 id="認証関連のメモ">認証関連のメモ</h2>
+<h3 id="グローバルなclasprcjsonclaspの認証とローカルなclasprcjsongasプロジェクトの認証の違いは">グローバルな.clasprc.json(claspの認証)とローカルな.clasprc.json(GASプロジェクトの認証)の違いは？</h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>claspの認証</th>
+<th>GASプロジェクトの認証</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>区分</td>
+<td>claspのGoogleアカウントへのアクセストークン</td>
+<td>GASアプリのGoogleアカウントへのアクセストークン</td>
+</tr>
+<tr>
+<td>役割</td>
+<td>clasp CLIがGoogle Drive上にあるGASプロジェクトに対し作成・アクセス・編集・デプロイできるようにする</td>
+<td>アプリをローカルで実行できるようにする。アプリが使うAPI(例えばSheets API)へのアクセス権限も取り持つ</td>
+</tr>
+<tr>
+<td>適用範囲</td>
+<td>どのGASプロジェクトにも適用される</td>
+<td>特定のGASプロジェクトのみ適用される</td>
+</tr>
+<tr>
+<td>ユーザ変更による再認証</td>
+<td>必要</td>
+<td>必要</td>
+</tr>
+<tr>
+<td>スコープ変更による再認証</td>
+<td>-</td>
+<td>必要</td>
+</tr>
+</tbody>
+</table>
+<h3 id="再ログインが必要なタイミングは">再ログインが必要なタイミングは？</h3>
+<p>以下の2ケース。</p>
+<ol>
+<li>別のGoogleアカウントで別のGASプロジェクトを開発したいとき</li>
+<li>スコープを変更するとき</li>
+</ol>
+<h4 id="1-別のgoogleアカウントで別のgasプロジェクトを開発したいとき">1. 別のGoogleアカウントで別のGASプロジェクトを開発したいとき</h4>
+<p>GASプロジェクトの認証とともに、claspの再認証が必要(Googleアカウントが変わるため)。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">clasp login
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">clasp login --creds creds.json
+</code></pre></td></tr></table>
+</div>
+</div><p>の両方を行う。</p>
+<h4 id="2-スコープを変更するとき">2. スコープを変更するとき</h4>
+<p>appsscript.jsonを書き換えた上で、./.clasprc.jsonを再認証する必要がある。</p>
+<ol>
+<li>
+<p>appsscript.jsonのoauthScopesのアイテムを追加、削除する(スコープの一覧は<a href="https://developers.google.com/identity/protocols/oauth2/scopes?hl=jp#script">こちら</a>)。</p>
+</li>
+<li>
+<p><code>clasp login --creds creds.json</code>により、GASプロジェクトを再認証する。例えば、oauthScopeでformsとカレンダーのfeedsを追加した場合、それぞれのアクセス要求が表示される(下図)。</p>
+</li>
+<li>
+<p>スコープ変更に対応したスクリプトを書き、pushする。</p>
+</li>
+</ol>
+<p><img src="https://www.niccari.net/assets/img/20210821/add_scope.png" alt="appsscript.json oauthScopesにformsとカレンダーのfeeds追加"></p>
+<p><img src="https://www.niccari.net/assets/img/20210821/add_scope_result.png" alt="認証許可時に、oauthScopesで追加した項目が追加表示される"></p>
+<h3 id="clasprcjsonについてexpiry_dateが指定されているが都度再認証が必要か">.clasprc.jsonについて、expiry_dateが指定されているが、都度再認証が必要か？</h3>
+<p>不要。</p>
+<p>確かにアクセストークンは1時間で期限切れになるものの、同時にrefresh_tokenが指定されている。refresh_tokenにより、トークンが切れたら期限が更新されたアクセストークンに更新されるようになっている。</p>
+<p>以上</p>
+
+<footer>
+    <div>
+        <h3><a href="https://www.niccari.net/posts">Back to all posts</a></h3>
+    </div>
+    <hr>
+    <p>Go <a href="https://www.niccari.net//index.xml">here</a> for an RSS feed.</p>
+</footer>
+
+</html>

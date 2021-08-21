@@ -3,13 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.niccari.net/categories/</loc>
-    <lastmod>2021-08-15T21:45:00+09:00</lastmod>
+    <lastmod>2021-08-21T14:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/posts/20210821/</loc>
+    <lastmod>2021-08-21T14:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.niccari.net/categories/dev/</loc>
-    <lastmod>2021-08-15T21:45:00+09:00</lastmod>
+    <lastmod>2021-08-21T14:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/tags/gas/</loc>
+    <lastmod>2021-08-21T14:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/tags/google-app-scripts/</loc>
+    <lastmod>2021-08-21T14:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/tags/javascript/</loc>
+    <lastmod>2021-08-21T14:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.niccari.net/</loc>
-    <lastmod>2021-08-15T21:45:00+09:00</lastmod>
+    <lastmod>2021-08-21T14:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/tags/npm/</loc>
+    <lastmod>2021-08-21T14:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/posts/</loc>
+    <lastmod>2021-08-21T14:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/tags/</loc>
+    <lastmod>2021-08-21T14:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.niccari.net/tags/typescript/</loc>
+    <lastmod>2021-08-21T14:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.niccari.net/tags/numpy/</loc>
     <lastmod>2021-08-15T21:45:00+09:00</lastmod>
@@ -20,31 +44,10 @@
     <loc>https://www.niccari.net/posts/20210815/</loc>
     <lastmod>2021-08-15T21:45:00+09:00</lastmod>
   </url><url>
-    <loc>https://www.niccari.net/posts/</loc>
-    <lastmod>2021-08-15T21:45:00+09:00</lastmod>
-  </url><url>
     <loc>https://www.niccari.net/tags/python/</loc>
     <lastmod>2021-08-15T21:45:00+09:00</lastmod>
   </url><url>
-    <loc>https://www.niccari.net/tags/</loc>
-    <lastmod>2021-08-15T21:45:00+09:00</lastmod>
-  </url><url>
     <loc>https://www.niccari.net/posts/20210808/</loc>
-    <lastmod>2021-08-08T18:30:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.niccari.net/tags/gas/</loc>
-    <lastmod>2021-08-08T18:30:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.niccari.net/tags/google-app-scripts/</loc>
-    <lastmod>2021-08-08T18:30:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.niccari.net/tags/javascript/</loc>
-    <lastmod>2021-08-08T18:30:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.niccari.net/tags/npm/</loc>
-    <lastmod>2021-08-08T18:30:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.niccari.net/tags/typescript/</loc>
     <lastmod>2021-08-08T18:30:00+09:00</lastmod>
   </url><url>
     <loc>https://www.niccari.net/posts/20210531/</loc>

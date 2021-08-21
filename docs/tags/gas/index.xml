@@ -6,7 +6,17 @@
     <description>Recent content in GAS on niccari.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 08 Aug 2021 18:30:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/tags/gas/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Aug 2021 14:00:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/tags/gas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>claspを使ったGAS開発フローまとめ</title>
+      <link>https://www.niccari.net/posts/20210821/</link>
+      <pubDate>Sat, 21 Aug 2021 14:00:00 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/posts/20210821/</guid>
+      <description>&lt;p&gt;claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き。&lt;/p&gt;
+&lt;p&gt;ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要がある。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>(archive) google/clasp 2.4.0でpackage.jsonが必要</title>
       <link>https://www.niccari.net/posts/20210808/</link>
