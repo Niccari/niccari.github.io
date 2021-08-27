@@ -16,20 +16,20 @@
 
     
     <meta property="og:title" content="claspを使ったGAS開発フローまとめ" />
-<meta property="og:description" content="claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き。
-ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要がある。" />
+<meta property="og:description" content="claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き(作成したサンプルコード)。
+ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要があった。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.niccari.net/posts/20210821/" /><meta property="og:image" content="https://www.niccari.net/assets/img/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-08-21T14:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2021-08-21T14:00:00&#43;09:00" />
+<meta property="article:published_time" content="2021-08-21T15:15:00&#43;09:00" />
+<meta property="article:modified_time" content="2021-08-21T15:15:00&#43;09:00" />
 
 
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.niccari.net/assets/img/logo.png"/>
 
 <meta name="twitter:title" content="claspを使ったGAS開発フローまとめ"/>
-<meta name="twitter:description" content="claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き。
-ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要がある。"/>
+<meta name="twitter:description" content="claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き(作成したサンプルコード)。
+ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要があった。"/>
 
 </head>
 
@@ -52,11 +52,11 @@
 <h1>claspを使ったGAS開発フローまとめ</h1>
 <p class="post-meta"><time itemprop="datePublished">August 21, 2021</time>
 </p>
-<p>claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き。</p>
-<p>ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要がある。</p>
-<h2 id="gas-claspによる開発構成イメージ">GAS, claspによる開発構成イメージ</h2>
+<p>claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き(<a href="https://github.com/Niccari/gas_ts_sample">作成したサンプルコード</a>)。</p>
+<p>ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要があった。</p>
+<h2 id="gas-claspによる開発フローのイメージ">GAS, claspによる開発フローのイメージ</h2>
 <p><img src="https://www.niccari.net/assets/img/20210821/gas_clasp_arch.png" alt="GAS, claspおよび関連するサービスの操作イメージ"></p>
-<p>※ claspはnpmによりインストール済みの想定。開発環境の構築周りについてはQiita等ですでに記事があるので省略。</p>
+<p>※ <a href="https://www.npmjs.com/package/@google/clasp">clasp</a>はnpmによりグローバルインストール済みの想定。環境構築はZenn, Qiita等にすでに記事があるので省略。</p>
 <p>開発は概ね以下のフローになる。</p>
 <ol start="0">
 <li>
@@ -71,7 +71,7 @@
 </ol>
 <ul>
 <li>2.1. Google Cloud Platform(以後、GCP)でプロジェクトを新規作成し、GASスクリプトに紐付けておく(<a href="https://script.google.com/">スクリプトエディタから、設定画面を通してプロジェクト番号を指定する</a>)</li>
-<li>2.2. GCP上で<a href="https://console.cloud.google.com/apis/credentials/consent">OAuth クライアントID</a>を作成し、秘密鍵(jsonファイル)をダウンロードする。この秘密鍵を使ってGASプロジェクトがGoogleアカウントにアクセスできるようにする(<code>clasp login --creds creds.json</code>)。これにより、<code>clasp run</code>を実行するとローカルでスクリプトを動作できるようになる。</li>
+<li>2.2. GCP上で<a href="https://console.cloud.google.com/apis/credentials/consent">OAuth 2,0 クライアント</a>を作成し、秘密鍵(jsonファイル)をダウンロードする。この秘密鍵を使ってGASプロジェクトがGoogleアカウントにアクセスできるようにする(<code>clasp login --creds creds.json</code>)。これにより、<code>clasp run</code>を実行するとローカルでスクリプトを動作できるようになる。</li>
 </ul>
 <ol start="3">
 <li>スクリプトを開発する。</li>
@@ -86,7 +86,7 @@
 <p>コードがFIXした段階でコードをpush、deployする。</p>
 </li>
 <li>
-<p>git等でバージョン管理している場合、適宜スクリプトをcommitする。ただし、.crasprc.jsonは機密情報なので.gitignoreで除外しておくこと。</p>
+<p>git等でバージョン管理している場合、適宜スクリプトをcommitする。ただし、.crasprc.jsonおよびcreds.jsonは機密情報なので.gitignoreで除外しておくこと。</p>
 </li>
 </ol>
 <p>※ 最新のスクリプトを実行したい場合、スクリプトをpushしておく必要がある。また、スクリプトエディタで実行可能APIに設定する必要がある。</p>
@@ -108,7 +108,7 @@
 </tr>
 <tr>
 <td>役割</td>
-<td>clasp CLIがGoogle Drive上にあるGASプロジェクトに対し作成・アクセス・編集・デプロイできるようにする</td>
+<td>clasp CLIがGoogle Drive上にあるGASプロジェクトに対し作成・操作できるようにする</td>
 <td>アプリをローカルで実行できるようにする。アプリが使うAPI(例えばSheets API)へのアクセス権限も取り持つ</td>
 </tr>
 <tr>
@@ -117,12 +117,12 @@
 <td>特定のGASプロジェクトのみ適用される</td>
 </tr>
 <tr>
-<td>ユーザ変更による再認証</td>
+<td>ユーザ変更後の再認証</td>
 <td>必要</td>
 <td>必要</td>
 </tr>
 <tr>
-<td>スコープ変更による再認証</td>
+<td>スコープ変更後の再認証</td>
 <td>-</td>
 <td>必要</td>
 </tr>

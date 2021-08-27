@@ -1,0 +1,20 @@
+template: ogp_template.png
+title:
+  fontSize: 65
+  fontStyle: Bold
+  fgHexColor: "#ffffff"
+info:
+  start:
+    pX: 132
+    pY: 536
+  fontSize: 30
+  fontStyle: Regular
+tags:
+  start:
+    pX: 1000
+    pY: 536
+  fontStyle: Regular
+  fontSize: 0
+  fgHexColor: "#272822"
+  bgHexColor: "#f1a800"
+

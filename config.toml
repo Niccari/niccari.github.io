@@ -12,8 +12,8 @@ Resume = ""
 Email = ""
 PostLimit = 3
 favicon = "favicon.ico"
-images = ["assets/img/logo.png"]
 description = "Provides web/android app works."
+TwitterName = "niccari"
 
 [[params.profiles]]
 name = "GitHub"
