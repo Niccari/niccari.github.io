@@ -26,24 +26,6 @@
     </item>
     
     <item>
-      <title>Javascript</title>
-      <link>https://www.niccari.net/tags/javascript/</link>
-      <pubDate>Sat, 21 Aug 2021 15:15:00 +0900</pubDate>
-      
-      <guid>https://www.niccari.net/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>npm</title>
-      <link>https://www.niccari.net/tags/npm/</link>
-      <pubDate>Sat, 21 Aug 2021 15:15:00 +0900</pubDate>
-      
-      <guid>https://www.niccari.net/tags/npm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>TypeScript</title>
       <link>https://www.niccari.net/tags/typescript/</link>
       <pubDate>Sat, 21 Aug 2021 15:15:00 +0900</pubDate>
@@ -76,6 +58,15 @@
       <pubDate>Sun, 15 Aug 2021 21:45:00 +0900</pubDate>
       
       <guid>https://www.niccari.net/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://www.niccari.net/tags/javascript/</link>
+      <pubDate>Sun, 08 Aug 2021 18:30:00 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/tags/javascript/</guid>
       <description></description>
     </item>
     
@@ -121,15 +112,6 @@
       <pubDate>Sat, 29 Sep 2018 22:10:00 +0900</pubDate>
       
       <guid>https://www.niccari.net/tags/azure-blob-storage/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Browser</title>
-      <link>https://www.niccari.net/tags/browser/</link>
-      <pubDate>Sat, 29 Sep 2018 22:10:00 +0900</pubDate>
-      
-      <guid>https://www.niccari.net/tags/browser/</guid>
       <description></description>
     </item>
     
