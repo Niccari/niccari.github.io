@@ -6,7 +6,34 @@
     <description>Recent content in Tags on niccari.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 21 Aug 2021 15:15:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Aug 2021 13:59:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>https://www.niccari.net/tags/docker/</link>
+      <pubDate>Sun, 29 Aug 2021 13:59:00 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gRPC</title>
+      <link>https://www.niccari.net/tags/grpc/</link>
+      <pubDate>Sun, 29 Aug 2021 13:59:00 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/tags/grpc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://www.niccari.net/tags/python/</link>
+      <pubDate>Sun, 29 Aug 2021 13:59:00 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/tags/python/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>GAS</title>
       <link>https://www.niccari.net/tags/gas/</link>
@@ -49,15 +76,6 @@
       <pubDate>Sun, 15 Aug 2021 21:45:00 +0900</pubDate>
       
       <guid>https://www.niccari.net/tags/pandas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://www.niccari.net/tags/python/</link>
-      <pubDate>Sun, 15 Aug 2021 21:45:00 +0900</pubDate>
-      
-      <guid>https://www.niccari.net/tags/python/</guid>
       <description></description>
     </item>
     
