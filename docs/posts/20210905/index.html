@@ -20,14 +20,11 @@
     <meta property="og:title" content="VoTTでプロジェクト、動画・画像の場所を移してもロードできるようにする" />
     <meta property="og:description" content="VoTT Ver.2.2.0現在、プロジェクト、動画・画像(アセット)のパスを変更するとロードできなくなる※1。
 これは以下の2点の原因による。
- アセットに関する情報が絶対パスに依存している ローカルファイルシステム設定の場合、ソース接続、ターゲット接続が絶対パスで保存されている  修正コードを作ったので、ファイル構造について注釈しつつ記載する。
- vott-replace-paths: VoTTファイルパス修正ツール コードはこちら。
-環境設定・利用方法はREADME.mdに記載している。
-ツール実行後、変換後のプロジェクト(*.vott)およびアセット管理情報(*-assets.json)はoutput/下に保存される(元ファイルをバックアップとして残しておくため)。
-なお、元々のプロジェクトおよびアセットがAzure Blob Storageおよびローカルファイルシステムどちらにあった場合も使用可能。
-ローカルファイルシステム上の保存パスを変更する場合 以下の通りパラメータを指定する。
-1 2 3 4  $ python main.py \  -k プロジェクトのセキュリティトークン \  -s ソース接続におけるアセットの保存パス \  -t ターゲット接続におけるプロジェクトの保存パス   Azure Blob Storage上のコンテナに移動させる場合 以下の通りパラメータを指定する。
-1 2 3 4 5 6  $ python main.py \  -k プロジェクトのセキュリティトークン \  -t プロジェクトの保存パス \  -a Azure Blob Storageのアカウント名 \  -c Azure Blob Storageのコンテナ名 \  -sas コンテナアクセス用のSAS文字列   処理の流れ 大まかには以下の通り処理する。" />
+
+アセットに関する情報が絶対パスに依存している
+ローカルファイルシステム設定の場合、ソース接続、ターゲット接続が絶対パスで保存されている
+
+修正コードを作ったので、ファイル構造について注釈しつつ記載する。" />
     <meta property="og:image" content="https://www.niccari.net/assets/img/ogp/20210905.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -60,7 +57,6 @@
 <li>ローカルファイルシステム設定の場合、ソース接続、ターゲット接続が絶対パスで保存されている</li>
 </ol>
 <p>修正コードを作ったので、ファイル構造について注釈しつつ記載する。</p>
-<!-- raw HTML omitted -->
 <hr>
 <h2 id="vott-replace-paths-vottファイルパス修正ツール">vott-replace-paths: VoTTファイルパス修正ツール</h2>
 <p>コードは<a href="https://github.com/Niccari/vott-replace-paths">こちら</a>。</p>
@@ -338,7 +334,6 @@
 <h2 id="脚注">脚注</h2>
 <p>※1 公式の<a href="https://github.com/microsoft/VoTT/pull/1027">PR#1027</a>で修正されているので、次期リリースではローカルファイルパスの問題は解消される見込み。ただし、Azure Blob Storageおよびローカルファイルシステム間の移動に関してはその限りではない。</p>
 <p>以上</p>
-
 
 <footer>
     <div>
