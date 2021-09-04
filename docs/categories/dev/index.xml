@@ -6,7 +6,25 @@
     <description>Recent content in dev on niccari.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 29 Aug 2021 13:59:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/categories/dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Sep 2021 08:08:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/categories/dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VoTTでプロジェクト、動画・画像の場所を移してもロードできるようにする</title>
+      <link>https://www.niccari.net/posts/20210905/</link>
+      <pubDate>Sun, 05 Sep 2021 08:08:00 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/posts/20210905/</guid>
+      <description>VoTT Ver.2.2.0現在、プロジェクト、動画・画像(アセット)のパスを変更するとロードできなくなる※1。
+これは以下の2点の原因による。
+ アセットに関する情報が絶対パスに依存している ローカルファイルシステム設定の場合、ソース接続、ターゲット接続が絶対パスで保存されている  修正コードを作ったので、ファイル構造について注釈しつつ記載する。
+ vott-replace-paths: VoTTファイルパス修正ツール コードはこちら。
+環境設定・利用方法はREADME.mdに記載している。
+ツール実行後、変換後のプロジェクト(*.vott)およびアセット管理情報(*-assets.json)はoutput/下に保存される(元ファイルをバックアップとして残しておくため)。
+なお、元々のプロジェクトおよびアセットがAzure Blob Storageおよびローカルファイルシステムどちらにあった場合も使用可能。
+ローカルファイルシステム上の保存パスを変更する場合 以下の通りパラメータを指定する。
+1 2 3 4  $ python main.py \  -k プロジェクトのセキュリティトークン \  -s ソース接続におけるアセットの保存パス \  -t ターゲット接続におけるプロジェクトの保存パス   Azure Blob Storage上のコンテナに移動させる場合 以下の通りパラメータを指定する。
+1 2 3 4 5 6  $ python main.py \  -k プロジェクトのセキュリティトークン \  -t プロジェクトの保存パス \  -a Azure Blob Storageのアカウント名 \  -c Azure Blob Storageのコンテナ名 \  -sas コンテナアクセス用のSAS文字列   処理の流れ 大まかには以下の通り処理する。</description>
+    </item>
+    
     <item>
       <title>マルチコンテナなサービス構成でgRPC in Pythonのpb2を共有する話</title>
       <link>https://www.niccari.net/posts/20210829/</link>

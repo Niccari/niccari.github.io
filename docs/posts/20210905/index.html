@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://www.niccari.net/css/style.css">
+    <link rel="stylesheet" href="https://www.niccari.net/css/fonts.css">
+    
+    <title>niccari.net (from NCAO meets Mesaito&#43;)</title>
+    <link rel="icon" type="image/png" href="https://www.niccari.net/assets/img/favicon.ico" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    
+
+    <meta property="og:url" content="https://www.niccari.net/posts/20210905/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="niccari.net" />
+    <meta property="og:title" content="VoTTでプロジェクト、動画・画像の場所を移してもロードできるようにする" />
+    <meta property="og:description" content="VoTT Ver.2.2.0現在、プロジェクト、動画・画像(アセット)のパスを変更するとロードできなくなる※1。
+これは以下の2点の原因による。
+ アセットに関する情報が絶対パスに依存している ローカルファイルシステム設定の場合、ソース接続、ターゲット接続が絶対パスで保存されている  修正コードを作ったので、ファイル構造について注釈しつつ記載する。
+ vott-replace-paths: VoTTファイルパス修正ツール コードはこちら。
+環境設定・利用方法はREADME.mdに記載している。
+ツール実行後、変換後のプロジェクト(*.vott)およびアセット管理情報(*-assets.json)はoutput/下に保存される(元ファイルをバックアップとして残しておくため)。
+なお、元々のプロジェクトおよびアセットがAzure Blob Storageおよびローカルファイルシステムどちらにあった場合も使用可能。
+ローカルファイルシステム上の保存パスを変更する場合 以下の通りパラメータを指定する。
+1 2 3 4  $ python main.py \  -k プロジェクトのセキュリティトークン \  -s ソース接続におけるアセットの保存パス \  -t ターゲット接続におけるプロジェクトの保存パス   Azure Blob Storage上のコンテナに移動させる場合 以下の通りパラメータを指定する。
+1 2 3 4 5 6  $ python main.py \  -k プロジェクトのセキュリティトークン \  -t プロジェクトの保存パス \  -a Azure Blob Storageのアカウント名 \  -c Azure Blob Storageのコンテナ名 \  -sas コンテナアクセス用のSAS文字列   処理の流れ 大まかには以下の通り処理する。" />
+    <meta property="og:image" content="https://www.niccari.net/assets/img/ogp/20210905.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="niccari" />
+</head>
+
+
+<html>
+<!DOCTYPE html>
+<html>
+
+<body>
+  <header class="site-header">
+
+    <div class="wrapper">
+      <a class="muted small" href="https://www.niccari.net/">niccari.net (from NCAO meets Mesaito&#43;)</a>
+    </div>
+  </header>
+</body>
+
+</html>
+
+<h1>VoTTでプロジェクト、動画・画像の場所を移してもロードできるようにする</h1>
+<p class="post-meta"><time itemprop="datePublished">September 5, 2021</time>
+</p>
+<p><a href="https://github.com/Microsoft/VoTT">VoTT</a> Ver.2.2.0現在、プロジェクト、動画・画像(アセット)のパスを変更するとロードできなくなる※1。</p>
+<p>これは以下の2点の原因による。</p>
+<ol>
+<li>アセットに関する情報が絶対パスに依存している</li>
+<li>ローカルファイルシステム設定の場合、ソース接続、ターゲット接続が絶対パスで保存されている</li>
+</ol>
+<p>修正コードを作ったので、ファイル構造について注釈しつつ記載する。</p>
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="vott-replace-paths-vottファイルパス修正ツール">vott-replace-paths: VoTTファイルパス修正ツール</h2>
+<p>コードは<a href="https://github.com/Niccari/vott-replace-paths">こちら</a>。</p>
+<p>環境設定・利用方法はREADME.mdに記載している。</p>
+<p>ツール実行後、変換後のプロジェクト(*.vott)およびアセット管理情報(*-assets.json)はoutput/下に保存される(元ファイルをバックアップとして残しておくため)。</p>
+<p>なお、元々のプロジェクトおよびアセットがAzure Blob Storageおよびローカルファイルシステムどちらにあった場合も使用可能。</p>
+<h3 id="ローカルファイルシステム上の保存パスを変更する場合">ローカルファイルシステム上の保存パスを変更する場合</h3>
+<p>以下の通りパラメータを指定する。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python main.py <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -k プロジェクトのセキュリティトークン <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -s ソース接続におけるアセットの保存パス <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -t ターゲット接続におけるプロジェクトの保存パス
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="azure-blob-storage上のコンテナに移動させる場合">Azure Blob Storage上のコンテナに移動させる場合</h3>
+<p>以下の通りパラメータを指定する。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python main.py <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -k プロジェクトのセキュリティトークン <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -t プロジェクトの保存パス <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -a Azure Blob Storageのアカウント名 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -c Azure Blob Storageのコンテナ名 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -sas コンテナアクセス用のSAS文字列
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="処理の流れ">処理の流れ</h3>
+<p>大まかには以下の通り処理する。</p>
+<ol>
+<li>アセットに関する情報を書き換え
+<ol>
+<li>変更前のアセットIDと、変更後のアセットIDのマッピング</li>
+<li>アセット管理情報の名前変更</li>
+<li>アセットのID, name, path書き換え</li>
+</ol>
+</li>
+<li>ソース接続/ターゲット接続情報の書き換え</li>
+</ol>
+<p>プロジェクトおよびアセット管理情報においては、複数箇所で同じアセットIDが使われることがある。</p>
+<p>そのため、1.1.で変更前のアセットID =&gt; 変更後のアセットIDをマッピングしている。</p>
+<p>1.2.では、アセット管理情報のファイル名自身にアセットIDが含まれているため、これを更新する。</p>
+<p>1.3.は、後述の内部構成に基づいてプロジェクトおよびアセット管理情報ファイルの書き換えを行う。</p>
+<p>最後に、ソース接続/ターゲット接続情報を書き換える。こちらも後述の内部構造に基づき、移動後の絶対パスもしくはAzure Blob Storageへの接続情報(アカウント名・アカウント名・SAS文字列)を暗号化して保存する。</p>
+<hr>
+<h2 id="内部構造について">内部構造について</h2>
+<h3 id="プロジェクトファイルvott">プロジェクトファイル(*.vott)</h3>
+<p>プロジェクトの設定情報とアセットに関する情報からなる。</p>
+<p>下記json例のうち、assetsがアセットに関する情報、それ以外がプロジェクトの設定情報である(本件に関連しないものは省略している)。</p>
+<p>このうち、書き換えが必要なのは</p>
+<ul>
+<li>sourceConnectionのproviderType: 保存先がローカルファイルシステム/Azure Blob Storage/Bing画像検索(本ツールでは未サポート)のうちどれか？</li>
+<li>sourceConnectionのproviderOptions: 暗号化された接続情報(json形式)がencryptedに入っている。base64でエンコードされており、ciphertextが実データ
+<ul>
+<li>ローカルファイルシステムの場合、保存フォルダパス(folderPath)が入る</li>
+<li>Azure Blob Storageの場合、アカウント名(accountName)・コンテナ名(containerName)、SAS文字列(sas)が入る</li>
+</ul>
+</li>
+<li>lastVisitedAssetId: 最後に閲覧したアセットID</li>
+<li>assetsのアセットID, id, name, path
+<ul>
+<li>アセットID, idは移動後アセットの絶対パスから計算したsha256ハッシュ値</li>
+<li>nameは以下2パターン
+<ul>
+<li>type=1か2(アセット自身)の場合
+<ul>
+<li>ローカルファイルシステムの場合: アセットのファイル名(e.g. video1234.mp4)</li>
+<li>Azure Blob Storageの場合: アセットのファイル名+SAS文字列(e.g. video1234.mp4?sv=&hellip;)</li>
+</ul>
+</li>
+<li>type=3(アセット上の特定時刻)の場合
+<ul>
+<li>ローカルファイルシステムの場合: アセットのファイル名#t=特定時刻(e.g. video1234.mp4#t=1.2)</li>
+<li>Azure Blob Storageの場合: アセットのファイル名+SAS文字列#t=特定時刻(e.g. video1234.mp4?sv=&hellip;#t=1.2)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>pathは以下2パターン
+<ul>
+<li>type=1か2の場合
+<ul>
+<li>ローカルファイルシステムの場合: アセットの絶対パス(e.g. file:/path/to/video1234.mp4)</li>
+<li>Azure Blob Storageの場合: URL(e.g. https://(account_name).blob.core.windows.net/(container_name)/video1234.mp4?sv=&hellip;)</li>
+</ul>
+</li>
+<li>type=3の場合
+<ul>
+<li>ローカルファイルシステムの場合: アセットの絶対パス#t=特定時刻(e.g. file:/path/to/video1234.mp4#t=特定時刻)</li>
+<li>Azure Blob Storageの場合: URL#t=特定時刻(e.g. https://(account_name).blob.core.windows.net/(container_name)/video1234.mp4?sv=&hellip;#t=特定時刻)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>となる。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;プロジェクト名&#34;</span>,
+    <span style="color:#f92672">&#34;securityToken&#34;</span>: <span style="color:#e6db74">&#34;セキュリティトークン名&#34;</span>,
+    <span style="color:#f92672">&#34;sourceConnection&#34;</span>: {
+        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;ソース接続名&#34;</span>,
+        <span style="color:#f92672">&#34;providerType&#34;</span>: <span style="color:#e6db74">&#34;localFileSystemProxy か azureBlobStorage&#34;</span>,
+        <span style="color:#f92672">&#34;providerOptions&#34;</span>: {
+            <span style="color:#f92672">&#34;encrypted&#34;</span>: <span style="color:#e6db74">&#34;暗号化済み接続情報&#34;</span>,
+        },
+        <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;ソース接続ID&#34;</span>
+    },
+    <span style="color:#f92672">&#34;targetConnection&#34;</span>: {
+        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;ターゲット接続名&#34;</span>,
+        <span style="color:#f92672">&#34;providerType&#34;</span>: <span style="color:#e6db74">&#34;localFileSystemProxy か azureBlobStorage&#34;</span>,
+        <span style="color:#f92672">&#34;providerOptions&#34;</span>: {
+            <span style="color:#f92672">&#34;encrypted&#34;</span>: <span style="color:#e6db74">&#34;暗号化済み接続情報&#34;</span>,
+        },
+        <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;ターゲット接続ID&#34;</span>
+    },
+    <span style="color:#f92672">&#34;lastVisitedAssetId&#34;</span>: <span style="color:#e6db74">&#34;最後に閲覧したアセットID&#34;</span>,
+    <span style="color:#f92672">&#34;assets&#34;</span>: {
+        <span style="color:#f92672">&#34;アセットID1&#34;</span>: {
+            <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;アセットID1&#34;</span>,
+            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;アセットのファイル名&#34;</span>,
+            <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;アセットファイルの絶対パス等&#34;</span>,
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#ae81ff">2</span>,
+        },
+        <span style="color:#f92672">&#34;アセットID2&#34;</span>: {
+            <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;アセットID2&#34;</span>,
+            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;アセットのファイル名#t=1.2&#34;</span>,
+            <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;アセットファイルの絶対パス等#t=1.2&#34;</span>,
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#ae81ff">3</span>,
+            <span style="color:#f92672">&#34;parent&#34;</span>: {
+                <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;アセットID1&#34;</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;アセットID1のnameと同じ&#34;</span>,
+                <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;アセットID1のpathと同じ&#34;</span>,
+                <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#960050;background-color:#1e0010">アセットID</span><span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">のtypeと同じ</span>,
+            },
+            <span style="color:#f92672">&#34;timestamp&#34;</span>: <span style="color:#ae81ff">1.2</span>
+        },
+        <span style="color:#960050;background-color:#1e0010">...</span>
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="アセット管理ファイル-assetsjson">アセット管理ファイル(*-assets.json)</h3>
+<p>アセットに関する情報およびバージョン情報からなる。
+ファイルが</p>
+<ol>
+<li>アセット自身の管理ファイル(type=2)</li>
+<li>アセット上の特定時刻の管理ファイル(type=3)</li>
+</ol>
+<p>のどちらかによってparentの有無が変わる。書き換えが必要なのはassetのid, name, pathだが、書き換えルールはプロジェクトファイル(*.vott)と同じである。</p>
+<h4 id="1-アセット自身の管理ファイルの場合一部省略">1. アセット自身の管理ファイルの場合(一部省略)</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;asset&#34;</span>: {
+        <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;アセットID1&#34;</span>,
+        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;アセットのファイル名&#34;</span>,
+        <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;アセットのファイルの絶対パス&#34;</span>,
+        <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#ae81ff">2</span>,
+    },
+}
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2-アセット上の特定時刻の管理ファイルの場合一部省略">2. アセット上の特定時刻の管理ファイルの場合(一部省略)</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;asset&#34;</span>: {
+        <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;アセットID2&#34;</span>,
+        <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;アセットのファイル名#t=1.2&#34;</span>,
+        <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;アセットのファイルの絶対パス&#34;</span>,
+        <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#ae81ff">3</span>,
+        <span style="color:#f92672">&#34;parent&#34;</span>: {
+            <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;アセットID1&#34;</span>,
+            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;アセットID1のnameと同じ&#34;</span>,
+            <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;アセットID2のpathと同じ&#34;</span>,
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#960050;background-color:#1e0010">アセットID</span><span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">のtypeと同じ</span>,
+        },
+        <span style="color:#f92672">&#34;timestamp&#34;</span>: <span style="color:#ae81ff">1.2</span>
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="脚注">脚注</h2>
+<p>※1 公式の<a href="https://github.com/microsoft/VoTT/pull/1027">PR#1027</a>で修正されているので、次期リリースではローカルファイルパスの問題は解消される見込み。ただし、Azure Blob Storageおよびローカルファイルシステム間の移動に関してはその限りではない。</p>
+<p>以上</p>
+
+
+<footer>
+    <div>
+        <h3><a href="https://www.niccari.net/posts">Back to all posts</a></h3>
+    </div>
+    <hr>
+    <p>Go <a href="https://www.niccari.net//index.xml">here</a> for an RSS feed.</p>
+</footer>
+
+</html>
