@@ -11,7 +11,7 @@ fi
 targets=$(find $content_path -name "*.md")
 for target in ${targets[@]}
 do
-  output_dirname="${root_path}/static/assets/img/ogp"
+  output_dirname="${root_path}/docs/assets/img/ogp"
   output_path="${output_dirname}/$(sed 's|\.md|\.png|g'  <<< $(basename $target))"
   if [ -f $output_path ]; then
     echo "$target exists. skip."
