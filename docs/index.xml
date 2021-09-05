@@ -6,7 +6,17 @@
     <description>Recent content on niccari.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 05 Sep 2021 08:08:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Sep 2021 06:45:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android Studioで&#39;Installed Build Tools revision 31.0.0 is corrupted&#39;となるエラーの修正方法</title>
+      <link>https://www.niccari.net/posts/20210906/</link>
+      <pubDate>Mon, 06 Sep 2021 06:45:00 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/posts/20210906/</guid>
+      <description>&lt;p&gt;Android 12対応をするにあたりAndroid Build Tools 31.0.0をインストールすると、ビルド時に表題のエラーとなった。本エラーはAndroid Gradle Plugin(AGP)のバージョンを7.0.0以上にすることで解消できる。&lt;/p&gt;
+&lt;p&gt;※ Stack Overflowでの回答内容を基にまとめた備忘録&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>VoTTでプロジェクト、動画・画像の場所を移してもロードできるようにする</title>
       <link>https://www.niccari.net/posts/20210905/</link>

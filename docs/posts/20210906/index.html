@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://www.niccari.net/css/style.css">
+    <link rel="stylesheet" href="https://www.niccari.net/css/fonts.css">
+    
+    <title>niccari.net (from NCAO meets Mesaito&#43;)</title>
+    <link rel="icon" type="image/png" href="https://www.niccari.net/assets/img/favicon.ico" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    
+
+    <meta property="og:url" content="https://www.niccari.net/posts/20210906/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="niccari.net" />
+    <meta property="og:title" content="Android Studioで&#39;Installed Build Tools revision 31.0.0 is corrupted&#39;となるエラーの修正方法" />
+    <meta property="og:description" content="Android 12対応をするにあたりAndroid Build Tools 31.0.0をインストールすると、ビルド時に表題のエラーとなった。本エラーはAndroid Gradle Plugin(AGP)のバージョンを7.0.0以上にすることで解消できる。
+※ Stack Overflowでの回答内容を基にまとめた備忘録" />
+    <meta property="og:image" content="https://www.niccari.net/assets/img/ogp/20210906.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="niccari" />
+</head>
+
+
+<html>
+<!DOCTYPE html>
+<html>
+
+<body>
+  <header class="site-header">
+
+    <div class="wrapper">
+      <a class="muted small" href="https://www.niccari.net/">niccari.net (from NCAO meets Mesaito&#43;)</a>
+    </div>
+  </header>
+</body>
+
+</html>
+
+<h1>Android Studioで&#39;Installed Build Tools revision 31.0.0 is corrupted&#39;となるエラーの修正方法</h1>
+<p class="post-meta"><time itemprop="datePublished">September 6, 2021</time>
+</p>
+<p>Android 12対応をするにあたりAndroid Build Tools 31.0.0をインストールすると、ビルド時に表題のエラーとなった。本エラーはAndroid Gradle Plugin(AGP)のバージョンを7.0.0以上にすることで解消できる。</p>
+<p>※ Stack Overflowでの回答内容を基にまとめた備忘録</p>
+<h2 id="発生環境">発生環境</h2>
+<ul>
+<li>Android Studio Arctic Fox 2020.3.1.24 arm版</li>
+<li>Gradle 6.7.1</li>
+<li>Android Gradle Plugin(AGP) 4.2.1</li>
+</ul>
+<h2 id="原因">原因</h2>
+<p>Android Build Tools 31.0.0より、旧DexコンパイラのDXが削除され、D8のみが付属されるようになっている(下図)。※1</p>
+<p>しかし、AGP ver.4.x系ではDXの削除がケアされずエラーとなる。</p>
+<p><img src="https://www.niccari.net/assets/img/20210906/build_tools_30_0_2_files.png" alt="Build Tools 30.0.2"></p>
+<p><img src="https://www.niccari.net/assets/img/20210906/build_tools_31_0_0_files.png" alt="Build Tools 31.0.0"></p>
+<h2 id="対策方法">対策方法</h2>
+<p>以下、2種類がある。特に制限がなければ1番目が望ましい。</p>
+<ol>
+<li>AGPを7.0.0以上にアップデートする(合わせて、Gradleのバージョンも7.0.2以上にアップデートする必要あり※2)</li>
+<li>Android Build Toolsを30.x.xで止めておく</li>
+</ol>
+<p>1の場合、バージョンアップに伴って以下の点に留意すること。※3</p>
+<ul>
+<li>Javaのバージョンが11以上になる</li>
+<li>一部APIが削除・変更となっている</li>
+</ul>
+<p>2の場合でも当面は問題ないが、APIレベル31(=Android 12)に対応できない。AGP側に起因する挙動なので、折を見てAGPを7.0.0以上にアップデートするのが望ましい。</p>
+<hr>
+<h2 id="脚注">脚注</h2>
+<ul>
+<li>※1 <a href="https://android-developers.googleblog.com/2020/02/the-path-to-dx-deprecation.html">昨年よりDXがdeprecated</a>になっており、今年の2月よりDXが順次削除される旨が通知されていた。恐らく、Android Build Tools 30.x.xでDXを削除すると影響が大きいため、31.0.0で削除したと推測される</li>
+<li>※2 <a href="https://developer.android.com/studio/releases/gradle-plugin?hl=ja#7-0-0">Android Gradle プラグインのリリースノート | Android デベロッパー | Android Developers</a> より</li>
+<li>※3 <a href="https://developers-jp.googleblog.com/2020/12/announcing-android-gradle-plugin.html">Google Developers Japan: AGP 7.0: Android Gradle プラグインリリース</a> より</li>
+</ul>
+<hr>
+<p>以上</p>
+
+<footer>
+    <div>
+        <h3><a href="https://www.niccari.net/posts">Back to all posts</a></h3>
+    </div>
+    <hr>
+    <p>Go <a href="https://www.niccari.net//index.xml">here</a> for an RSS feed.</p>
+</footer>
+
+</html>
