@@ -17,11 +17,11 @@
     <meta property="og:url" content="https://www.niccari.net/posts/20210905/" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="niccari.net" />
-    <meta property="og:title" content="VoTTでプロジェクト、動画・画像の場所を移してもロードできるようにする" />
-    <meta property="og:description" content="VoTT Ver.2.2.0現在、プロジェクト、動画・画像(アセット)のパスを変更するとロードできなくなる※1。
+    <meta property="og:title" content="VoTTでプロジェクト、動画・画像の場所を変更してもロードできるようにする" />
+    <meta property="og:description" content="VoTT v2.2.0現在、プロジェクトや動画・画像(アセット)のパスを変更するとロードできなくなる※1。
 これは以下の2点の原因による。
 
-アセットに関する情報が絶対パスに依存している
+アセットに関する情報(アセットのIDなど)が絶対パスに依存している
 ローカルファイルシステム設定の場合、ソース接続、ターゲット接続が絶対パスで保存されている
 
 修正コードを作ったので、ファイル構造について注釈しつつ記載する。" />
@@ -47,13 +47,13 @@
 
 </html>
 
-<h1>VoTTでプロジェクト、動画・画像の場所を移してもロードできるようにする</h1>
+<h1>VoTTでプロジェクト、動画・画像の場所を変更してもロードできるようにする</h1>
 <p class="post-meta"><time itemprop="datePublished">September 5, 2021</time>
 </p>
-<p><a href="https://github.com/Microsoft/VoTT">VoTT</a> Ver.2.2.0現在、プロジェクト、動画・画像(アセット)のパスを変更するとロードできなくなる※1。</p>
+<p><a href="https://github.com/Microsoft/VoTT">VoTT</a> v2.2.0現在、プロジェクトや動画・画像(アセット)のパスを変更するとロードできなくなる※1。</p>
 <p>これは以下の2点の原因による。</p>
 <ol>
-<li>アセットに関する情報が絶対パスに依存している</li>
+<li>アセットに関する情報(アセットのIDなど)が絶対パスに依存している</li>
 <li>ローカルファイルシステム設定の場合、ソース接続、ターゲット接続が絶対パスで保存されている</li>
 </ol>
 <p>修正コードを作ったので、ファイル構造について注釈しつつ記載する。</p>
