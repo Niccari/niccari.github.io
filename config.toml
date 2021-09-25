@@ -7,7 +7,7 @@ canonifyurls = true
 
 [params]
 Name = "niccari.net (from NCAO meets Mesaito+)"
-About = "Provides web/android app works: [Fractal Visualizer for Web](/fv)"
+About = "Provides web/android app works."
 Resume = ""
 Email = ""
 PostLimit = 3
