@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "https://niccari.net/dgraph/static/css/main.f7990802.chunk.css",
-    "main.js": "https://niccari.net/dgraph/static/js/main.52e2c44d.chunk.js",
-    "runtime-main.js": "https://niccari.net/dgraph/static/js/runtime-main.be1f0ca8.js",
-    "static/js/2.d5d57b94.chunk.js": "https://niccari.net/dgraph/static/js/2.d5d57b94.chunk.js",
-    "static/js/3.3c5ce42d.chunk.js": "https://niccari.net/dgraph/static/js/3.3c5ce42d.chunk.js",
-    "index.html": "https://niccari.net/dgraph/index.html",
-    "static/js/2.d5d57b94.chunk.js.LICENSE.txt": "https://niccari.net/dgraph/static/js/2.d5d57b94.chunk.js.LICENSE.txt"
+    "main.css": "./static/css/main.cf2f3433.chunk.css",
+    "main.js": "./static/js/main.4a0e1c2f.chunk.js",
+    "runtime-main.js": "./static/js/runtime-main.d0b98c65.js",
+    "static/js/2.d5d57b94.chunk.js": "./static/js/2.d5d57b94.chunk.js",
+    "static/js/3.3c5ce42d.chunk.js": "./static/js/3.3c5ce42d.chunk.js",
+    "index.html": "./index.html",
+    "static/js/2.d5d57b94.chunk.js.LICENSE.txt": "./static/js/2.d5d57b94.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.be1f0ca8.js",
+    "static/js/runtime-main.d0b98c65.js",
     "static/js/2.d5d57b94.chunk.js",
-    "static/css/main.f7990802.chunk.css",
-    "static/js/main.52e2c44d.chunk.js"
+    "static/css/main.cf2f3433.chunk.css",
+    "static/js/main.4a0e1c2f.chunk.js"
   ]
 }
