@@ -65,11 +65,11 @@ M1チップ上でTensorFlow/Keras使って物体識別モデルを作る" />
 <ul>
 <li>バッチサイズ &gt;= 2でSIGSEGVが発生する。バッチサイズが大きいほどクラッシュ確率が高まる(以下エラーが例。コード見る限り、tensor計算時の型の不整合が発生している？)</li>
 </ul>
-<pre><code>E tensorflow/core/framework/types.cc:101] Unrecognized DataType enum value 57
+<pre tabindex="0"><code>E tensorflow/core/framework/types.cc:101] Unrecognized DataType enum value 57
 </code></pre><ul>
 <li>以下のコマンドでGPUにて回すこともできないこともないが、batch_sizeが2以上だと発散してnanになる可能性が高い。</li>
 </ul>
-<pre><code>from tensorflow.python.compiler.mlcompute import mlcompute
+<pre tabindex="0"><code>from tensorflow.python.compiler.mlcompute import mlcompute
 mlcompute.set_mlc_device(device_name='gpu')
 </code></pre>
 
