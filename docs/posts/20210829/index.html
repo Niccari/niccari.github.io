@@ -49,7 +49,7 @@
 <p>各コンテナをPythonで実装する場合、*pb2*.pyの共有にはどんな方法があるか？</p>
 <h2 id="背景">背景</h2>
 <p>複数のDockerコンテナでgRPC通信する環境の場合、以下のようなファイル構成が想定される(Docker Composeを使う場合)。</p>
-<pre><code>backend/
+<pre tabindex="0"><code>backend/
 - docker-compose.yml
 - service_main/: mainサービスのコード・コンテナ構成
 - service_sub1/: sub1サービスのコード・コンテナ構成
@@ -79,7 +79,7 @@
 </ol>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -102,7 +102,7 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
 </span><span style="color:#75715e"></span>
 proto_sub1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub1&#34;</span>
 proto_sub2<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub2&#34;</span>
@@ -138,7 +138,7 @@ rm *pb2*.py
 <ol>
 <li>proto/のフォルダ構成を以下に変更する。</li>
 </ol>
-<pre><code>(sub1向けライブラリ名)/
+<pre tabindex="0"><code>(sub1向けライブラリ名)/
   - __init__.py
   - setup.py
 (sub2向けライブラリ名)/
@@ -149,7 +149,7 @@ rm *pb2*.py
 </code></pre><p>__init__.pyについては空でよい。setup.pyは以下のようにsetup関数を実行するようにする。</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -161,7 +161,7 @@ rm *pb2*.py
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> setuptools <span style="color:#f92672">import</span> setup
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> setuptools <span style="color:#f92672">import</span> setup
 
 setup(
     name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ライブラリ名&#39;</span>,
@@ -178,7 +178,7 @@ setup(
 </ol>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -213,7 +213,7 @@ setup(
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">proto_sub1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub1&#34;</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">proto_sub1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub1&#34;</span>
 proto_sub2<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub2&#34;</span>
 lib_sub1_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./(sub1向けライブラリ名)&#34;</span>
 lib_sub2_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./(sub2向けライブラリ名)&#34;</span>
