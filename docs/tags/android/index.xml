@@ -6,7 +6,16 @@
     <description>Recent content in Android on niccari.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 06 Sep 2021 06:45:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Oct 2021 18:50:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(供養)過去の作品をざっと掲載</title>
+      <link>https://www.niccari.net/posts/20211031/</link>
+      <pubDate>Sun, 31 Oct 2021 18:50:00 +0900</pubDate>
+      
+      <guid>https://www.niccari.net/posts/20211031/</guid>
+      <description>&lt;p&gt;ここ20年近くに渡り、個人制作していたものの一部を振り返り用に掲載します。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Android Studioで&#39;Installed Build Tools revision 31.0.0 is corrupted&#39;となるエラーの修正方法</title>
       <link>https://www.niccari.net/posts/20210906/</link>
