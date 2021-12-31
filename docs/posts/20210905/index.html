@@ -17,8 +17,8 @@
     <meta property="og:url" content="https://www.niccari.net/posts/20210905/" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="niccari.net" />
-    <meta property="og:title" content="VoTTでプロジェクト、動画・画像の場所を変更してもロードできるようにする" />
-    <meta property="og:description" content="VoTT v2.2.0現在、プロジェクトや動画・画像(アセット)のパスを変更するとロードできなくなる※1。
+    <meta property="og:title" content="(2021.12.31更新) VoTTでプロジェクト、動画・画像の場所を変更してもロードできるようにする" />
+    <meta property="og:description" content="VoTT において、プロジェクトや動画・画像(アセット)のパスを変更するとロードできなくなる※1。
 これは以下の2点の原因による。
 
 アセットに関する情報(アセットのIDなど)が絶対パスに依存している
@@ -47,10 +47,10 @@
 
 </html>
 
-<h1>VoTTでプロジェクト、動画・画像の場所を変更してもロードできるようにする</h1>
-<p class="post-meta"><time itemprop="datePublished">September 5, 2021</time>
+<h1>(2021.12.31更新) VoTTでプロジェクト、動画・画像の場所を変更してもロードできるようにする</h1>
+<p class="post-meta"><time itemprop="datePublished">December 31, 2021</time>
 </p>
-<p><a href="https://github.com/Microsoft/VoTT">VoTT</a> v2.2.0現在、プロジェクトや動画・画像(アセット)のパスを変更するとロードできなくなる※1。</p>
+<p><a href="https://github.com/Microsoft/VoTT">VoTT</a> において、プロジェクトや動画・画像(アセット)のパスを変更するとロードできなくなる※1。</p>
 <p>これは以下の2点の原因による。</p>
 <ol>
 <li>アセットに関する情報(アセットのIDなど)が絶対パスに依存している</li>
@@ -58,64 +58,28 @@
 </ol>
 <p>修正コードを作ったので、ファイル構造について注釈しつつ記載する。</p>
 <hr>
+<p>(初版作成日: 2021.09.05, 最終更新日: 2021.12.31)</p>
+<p><strong>本記事の最新版は<a href="https://zenn.dev/niccari/articles/3a3e1dd033dfc1">Zenn</a>にあるバージョンを参照ください。以下の内容は記録用に残しています。</strong></p>
+<hr>
 <h2 id="vott-replace-paths-vottファイルパス修正ツール">vott-replace-paths: VoTTファイルパス修正ツール</h2>
-<p>コードは<a href="https://github.com/Niccari/vott-replace-paths">こちら</a>。</p>
-<p>環境設定・利用方法はREADME.mdに記載している。</p>
-<p>ツール実行後、変換後のプロジェクト(*.vott)およびアセット管理情報(*-assets.json)はoutput/下に保存される(元ファイルをバックアップとして残しておくため)。</p>
-<p>なお、元々のプロジェクトおよびアセットがAzure Blob Storageおよびローカルファイルシステムどちらにあった場合も使用可能。</p>
-<h3 id="ローカルファイルシステム上の保存パスを変更する場合">ローカルファイルシステム上の保存パスを変更する場合</h3>
-<p>以下の通りパラメータを指定する。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python main.py <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -k プロジェクトのセキュリティトークン <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -s ソース接続におけるアセットの保存パス <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -t ターゲット接続におけるプロジェクトの保存パス
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="azure-blob-storage上のコンテナに移動させる場合">Azure Blob Storage上のコンテナに移動させる場合</h3>
-<p>以下の通りパラメータを指定する。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python main.py <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -k プロジェクトのセキュリティトークン <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -t プロジェクトの保存パス <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -a Azure Blob Storageのアカウント名 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -c Azure Blob Storageのコンテナ名 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -sas コンテナアクセス用のSAS文字列
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="処理の流れ">処理の流れ</h3>
-<p>大まかには以下の通り処理する。</p>
+<p>(2021.12.31) コードを<a href="https://niccari.net/vott-replace-paths">ブラウザ動作版</a>に変更。</p>
+<p>コードは<a href="https://github.com/Niccari/vott-replace-paths-web">こちら</a>。</p>
+<p>利用方法はREADME.mdに記載している。</p>
+<p>元々のプロジェクトおよびアセットがAzure Blob Storageおよびローカルファイルシステムどちらにあった場合も使用可能。</p>
+<h3 id="処理の流れ">処理の流れ</h3>
 <ol>
 <li>アセットに関する情報を書き換え
 <ol>
 <li>変更前のアセットIDと、変更後のアセットIDのマッピング</li>
-<li>アセット管理情報の名前変更</li>
 <li>アセットのID, name, path書き換え</li>
 </ol>
 </li>
 <li>ソース接続/ターゲット接続情報の書き換え</li>
+<li>処理結果をzipファイルにまとめてダウンロード</li>
 </ol>
 <p>プロジェクトおよびアセット管理情報においては、複数箇所で同じアセットIDが使われることがある。</p>
 <p>そのため、1.1.で変更前のアセットID =&gt; 変更後のアセットIDをマッピングしている。</p>
-<p>1.2.では、アセット管理情報のファイル名自身にアセットIDが含まれているため、これを更新する。</p>
-<p>1.3.は、後述の内部構成に基づいてプロジェクトおよびアセット管理情報ファイルの書き換えを行う。</p>
-<p>最後に、ソース接続/ターゲット接続情報を書き換える。こちらも後述の内部構造に基づき、移動後の絶対パスもしくはAzure Blob Storageへの接続情報(アカウント名・アカウント名・SAS文字列)を暗号化して保存する。</p>
+<p>1.2.および2.では、後述の内部構成に基づいてプロジェクトおよびアセット管理情報ファイルの書き換えを行う。</p>
 <hr>
 <h2 id="内部構造について">内部構造について</h2>
 <h3 id="プロジェクトファイルvott">プロジェクトファイル(*.vott)</h3>
@@ -322,8 +286,8 @@
         <span style="color:#f92672">&#34;parent&#34;</span>: {
             <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;アセットID1&#34;</span>,
             <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;アセットID1のnameと同じ&#34;</span>,
-            <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;アセットID2のpathと同じ&#34;</span>,
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#960050;background-color:#1e0010">アセットID</span><span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">のtypeと同じ</span>,
+            <span style="color:#f92672">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;アセットID1のpathと同じ&#34;</span>,
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#960050;background-color:#1e0010">アセットID</span><span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">のtypeと同じ</span>,
         },
         <span style="color:#f92672">&#34;timestamp&#34;</span>: <span style="color:#ae81ff">1.2</span>
     }
@@ -332,7 +296,7 @@
 </div>
 </div><hr>
 <h2 id="脚注">脚注</h2>
-<p>※1 公式の<a href="https://github.com/microsoft/VoTT/pull/1027">PR#1027</a>で修正されているので、次期リリースではローカルファイルパスの問題は解消される見込み。ただし、Azure Blob Storageおよびローカルファイルシステム間の移動に関してはその限りではない。</p>
+<p>※1 公式の<a href="https://github.com/microsoft/VoTT/pull/1027">PR#1027</a>で修正されているものの、リリース前にプロジェクトが凍結した。そのため、修正版はすぐには出ない見通し。</p>
 <p>以上</p>
 
 <footer>

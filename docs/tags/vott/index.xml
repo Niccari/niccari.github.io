@@ -6,14 +6,14 @@
     <description>Recent content in VoTT on niccari.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 05 Sep 2021 08:08:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/tags/vott/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 31 Dec 2021 16:00:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/tags/vott/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>VoTTでプロジェクト、動画・画像の場所を変更してもロードできるようにする</title>
+      <title>(2021.12.31更新) VoTTでプロジェクト、動画・画像の場所を変更してもロードできるようにする</title>
       <link>https://www.niccari.net/posts/20210905/</link>
-      <pubDate>Sun, 05 Sep 2021 08:08:00 +0900</pubDate>
+      <pubDate>Fri, 31 Dec 2021 16:00:00 +0900</pubDate>
       
       <guid>https://www.niccari.net/posts/20210905/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/Microsoft/VoTT&#34;&gt;VoTT&lt;/a&gt; v2.2.0現在、プロジェクトや動画・画像(アセット)のパスを変更するとロードできなくなる※1。&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/Microsoft/VoTT&#34;&gt;VoTT&lt;/a&gt; において、プロジェクトや動画・画像(アセット)のパスを変更するとロードできなくなる※1。&lt;/p&gt;
 &lt;p&gt;これは以下の2点の原因による。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;アセットに関する情報(アセットのIDなど)が絶対パスに依存している&lt;/li&gt;
