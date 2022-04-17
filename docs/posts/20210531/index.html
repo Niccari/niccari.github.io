@@ -70,7 +70,7 @@ M1チップ上でTensorFlow/Keras使って物体識別モデルを作る" />
 <li>以下のコマンドでGPUにて回すこともできないこともないが、batch_sizeが2以上だと発散してnanになる可能性が高い。</li>
 </ul>
 <pre tabindex="0"><code>from tensorflow.python.compiler.mlcompute import mlcompute
-mlcompute.set_mlc_device(device_name='gpu')
+mlcompute.set_mlc_device(device_name=&#39;gpu&#39;)
 </code></pre>
 
 <footer>

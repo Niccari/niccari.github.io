@@ -77,53 +77,53 @@
 <ol>
 <li>proto/ にコンパイル・pb2共有用のshell scriptを追加する。本scriptでは、protoをコンパイル後*pb2*.pyを各サービスに展開する。</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>
-proto_sub1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub1&#34;</span>
-proto_sub2<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub2&#34;</span>
-
-<span style="color:#75715e"># compile *.proto</span>
-python3 -m grpc_tools.protoc <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span>.proto --proto_path<span style="color:#f92672">=</span>. <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    --python_out<span style="color:#f92672">=</span>. --grpc_python_out<span style="color:#f92672">=</span>.
-python3 -m grpc_tools.protoc <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span>.proto --proto_path<span style="color:#f92672">=</span>. <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    --python_out<span style="color:#f92672">=</span>. --grpc_python_out<span style="color:#f92672">=</span>.
-
-<span style="color:#75715e"># move pb2 to each service</span>
-cp <span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span>*pb2*.py ../service_main
-cp <span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span>*pb2*.py ../service_sub1
-
-cp <span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span>*pb2*.py ../service_main
-cp <span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span>*pb2*.py ../service_sub2
-
-rm *pb2*.py
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>proto_sub1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub1&#34;</span>
+</span></span><span style="display:flex;"><span>proto_sub2<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub2&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># compile *.proto</span>
+</span></span><span style="display:flex;"><span>python3 -m grpc_tools.protoc <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span>.proto --proto_path<span style="color:#f92672">=</span>. <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --python_out<span style="color:#f92672">=</span>. --grpc_python_out<span style="color:#f92672">=</span>.
+</span></span><span style="display:flex;"><span>python3 -m grpc_tools.protoc <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span>.proto --proto_path<span style="color:#f92672">=</span>. <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --python_out<span style="color:#f92672">=</span>. --grpc_python_out<span style="color:#f92672">=</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># move pb2 to each service</span>
+</span></span><span style="display:flex;"><span>cp <span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span>*pb2*.py ../service_main
+</span></span><span style="display:flex;"><span>cp <span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span>*pb2*.py ../service_sub1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cp <span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span>*pb2*.py ../service_main
+</span></span><span style="display:flex;"><span>cp <span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span>*pb2*.py ../service_sub2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rm *pb2*.py
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>protoファイルを更新するたび、上記shell scriptを実行。更新した*.protoおよび*pb2*.pyをVCSにcommitする。</li>
@@ -147,106 +147,106 @@ rm *pb2*.py
 - interface_main_sub1.proto
 - interface_main_sub2.proto
 </code></pre><p>__init__.pyについては空でよい。setup.pyは以下のようにsetup関数を実行するようにする。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> setuptools <span style="color:#f92672">import</span> setup
-
-setup(
-    name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ライブラリ名&#39;</span>,
-    version<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;protoに対するバージョン(0.0.1など)&#39;</span>,
-    description<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;proto定義についての簡潔な説明&#39;</span>,
-    author<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ライブラリ制作元&#39;</span>,
-    install_requires<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;grpcio&#34;</span>, <span style="color:#e6db74">&#34;protobuf&#34;</span>],    <span style="color:#75715e"># *pb2*.py内でimportされるので必要</span>
-    packages<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;*向けライブラリ名&#34;</span>],
-)
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> setuptools <span style="color:#f92672">import</span> setup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>setup(
+</span></span><span style="display:flex;"><span>    name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ライブラリ名&#39;</span>,
+</span></span><span style="display:flex;"><span>    version<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;protoに対するバージョン(0.0.1など)&#39;</span>,
+</span></span><span style="display:flex;"><span>    description<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;proto定義についての簡潔な説明&#39;</span>,
+</span></span><span style="display:flex;"><span>    author<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ライブラリ制作元&#39;</span>,
+</span></span><span style="display:flex;"><span>    install_requires<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;grpcio&#34;</span>, <span style="color:#e6db74">&#34;protobuf&#34;</span>],    <span style="color:#75715e"># *pb2*.py内でimportされるので必要</span>
+</span></span><span style="display:flex;"><span>    packages<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;*向けライブラリ名&#34;</span>],
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>proto/ にコンパイル・pb2共有用のshell scriptを追加。本scriptでは、protoをコンパイル後*pb2*.pyをライブラリにする。ライブラリを各サービスに展開する。</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">proto_sub1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub1&#34;</span>
-proto_sub2<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub2&#34;</span>
-lib_sub1_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./(sub1向けライブラリ名)&#34;</span>
-lib_sub2_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./(sub2向けライブラリ名)&#34;</span>
-
-<span style="color:#75715e"># compile *.proto</span>
-python3 -m grpc_tools.protoc <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span>.proto --proto_path<span style="color:#f92672">=</span>. <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    --python_out<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>lib_sub1_path<span style="color:#e6db74">}</span> --grpc_python_out<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>lib_sub1_path<span style="color:#e6db74">}</span>
-    python3 -m grpc_tools.protoc <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span>.proto --proto_path<span style="color:#f92672">=</span>. <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    --python_out<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>lib_sub2_path<span style="color:#e6db74">}</span> --grpc_python_out<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>lib_sub2_path<span style="color:#e6db74">}</span>
-
-<span style="color:#75715e"># Make pb2 importable</span>
-sed -i <span style="color:#e6db74">&#39;&#39;</span> -e <span style="color:#e6db74">&#34;s/^import </span><span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span><span style="color:#e6db74">_pb2/from . import </span><span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span><span style="color:#e6db74">_pb2/&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>lib_sub1_path<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span><span style="color:#e6db74">_pb2_grpc.py&#34;</span>
-sed -i <span style="color:#e6db74">&#39;&#39;</span> -e <span style="color:#e6db74">&#34;s/^import </span><span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span><span style="color:#e6db74">_pb2/from . import </span><span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span><span style="color:#e6db74">_pb2/&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>lib_sub2_path<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span><span style="color:#e6db74">_pb2_grpc.py&#34;</span>
-
-<span style="color:#75715e"># build libraries, then move them to each service</span>
-cd <span style="color:#e6db74">${</span>lib_sub1_path<span style="color:#e6db74">}</span>
-python3 setup.py bdist_wheel
-rm -r build *.egg-info
-cp dist/*.whl ../../service_main
-cp dist/*.whl ../../service_sub1
-rm -r dist
-cd ..
-
-cd <span style="color:#e6db74">${</span>lib_sub2_path<span style="color:#e6db74">}</span>
-python3 setup.py bdist_wheel
-rm -r build *.egg-info
-cp dist/*.whl ../../service_main
-cp dist/*.whl ../../service_sub2
-rm -r dist
-cd ..
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>proto_sub1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub1&#34;</span>
+</span></span><span style="display:flex;"><span>proto_sub2<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub2&#34;</span>
+</span></span><span style="display:flex;"><span>lib_sub1_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./(sub1向けライブラリ名)&#34;</span>
+</span></span><span style="display:flex;"><span>lib_sub2_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./(sub2向けライブラリ名)&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># compile *.proto</span>
+</span></span><span style="display:flex;"><span>python3 -m grpc_tools.protoc <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span>.proto --proto_path<span style="color:#f92672">=</span>. <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --python_out<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>lib_sub1_path<span style="color:#e6db74">}</span> --grpc_python_out<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>lib_sub1_path<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>    python3 -m grpc_tools.protoc <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span>.proto --proto_path<span style="color:#f92672">=</span>. <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --python_out<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>lib_sub2_path<span style="color:#e6db74">}</span> --grpc_python_out<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>lib_sub2_path<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Make pb2 importable</span>
+</span></span><span style="display:flex;"><span>sed -i <span style="color:#e6db74">&#39;&#39;</span> -e <span style="color:#e6db74">&#34;s/^import </span><span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span><span style="color:#e6db74">_pb2/from . import </span><span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span><span style="color:#e6db74">_pb2/&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>lib_sub1_path<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span><span style="color:#e6db74">_pb2_grpc.py&#34;</span>
+</span></span><span style="display:flex;"><span>sed -i <span style="color:#e6db74">&#39;&#39;</span> -e <span style="color:#e6db74">&#34;s/^import </span><span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span><span style="color:#e6db74">_pb2/from . import </span><span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span><span style="color:#e6db74">_pb2/&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>lib_sub2_path<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span><span style="color:#e6db74">_pb2_grpc.py&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># build libraries, then move them to each service</span>
+</span></span><span style="display:flex;"><span>cd <span style="color:#e6db74">${</span>lib_sub1_path<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>python3 setup.py bdist_wheel
+</span></span><span style="display:flex;"><span>rm -r build *.egg-info
+</span></span><span style="display:flex;"><span>cp dist/*.whl ../../service_main
+</span></span><span style="display:flex;"><span>cp dist/*.whl ../../service_sub1
+</span></span><span style="display:flex;"><span>rm -r dist
+</span></span><span style="display:flex;"><span>cd ..
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd <span style="color:#e6db74">${</span>lib_sub2_path<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>python3 setup.py bdist_wheel
+</span></span><span style="display:flex;"><span>rm -r build *.egg-info
+</span></span><span style="display:flex;"><span>cp dist/*.whl ../../service_main
+</span></span><span style="display:flex;"><span>cp dist/*.whl ../../service_sub2
+</span></span><span style="display:flex;"><span>rm -r dist
+</span></span><span style="display:flex;"><span>cd ..
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="3">
 <li>各サービスごとに、生成されたライブラリをインストールする。更新した*.proto, requirements.txtおよび生成されたwhlをVCSにcommitする。</li>
