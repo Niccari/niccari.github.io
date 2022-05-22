@@ -13,13 +13,8 @@
       <pubDate>Fri, 31 Dec 2021 16:00:00 +0900</pubDate>
       
       <guid>https://www.niccari.net/posts/20210905/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/Microsoft/VoTT&#34;&gt;VoTT&lt;/a&gt; において、プロジェクトや動画・画像(アセット)のパスを変更するとロードできなくなる※1。&lt;/p&gt;
-&lt;p&gt;これは以下の2点の原因による。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;アセットに関する情報(アセットのIDなど)が絶対パスに依存している&lt;/li&gt;
-&lt;li&gt;ローカルファイルシステム設定の場合、ソース接続、ターゲット接続が絶対パスで保存されている&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;修正コードを作ったので、ファイル構造について注釈しつつ記載する。&lt;/p&gt;</description>
+      <description>(初版作成日: 2021.09.05)
+Zennに完全移転しました。</description>
     </item>
     
   </channel>
