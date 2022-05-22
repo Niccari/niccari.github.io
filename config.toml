@@ -6,13 +6,13 @@ publishDir = "docs"
 canonifyurls = true
 
 [params]
-Name = "niccari.net (from NCAO meets Mesaito+)"
-About = "Provides web/android app works."
+Name = "niccari.net"
+About = "Provides some visual, or utility web/mobile applications."
 Resume = ""
 Email = ""
 PostLimit = 3
 favicon = "favicon.ico"
-description = "Provides web/android app works."
+description = "Provides some visual, or utility web/mobile applications."
 TwitterName = "niccari"
 
 [[params.profiles]]
