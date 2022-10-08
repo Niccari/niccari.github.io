@@ -7,7 +7,7 @@ canonifyurls = true
 
 [params]
 Name = "niccari.net"
-About = "Provides some visual, or utility web/mobile applications."
+About = "niccariによる、作ったアプリや技術記事などの活動をまとめたページです。"
 Resume = ""
 Email = ""
 PostLimit = 3

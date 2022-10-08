@@ -5,7 +5,7 @@
 <body>
   {{ partial "page_header.html" . }}
 
-  <h3>Posts</h3>
+  <h3>過去記事</h3>
 
   <div>
 
@@ -13,7 +13,7 @@
     {{ range sort .Pages.ByPublishDate.Reverse }}
     <div>
       <a href="{{ .Permalink }}">{{ .Title }}</a><br />
-      <time>{{ .Date.Format "January 2, 2006" }}</time>
+      <time>{{ .Date.Format "2006年1月2日" }}</time>
     </div>
     <br />
     {{ end }}
