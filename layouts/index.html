@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 {{ partial "head.html" . }}
 
 <body>
 
 	<h1>{{ .Site.Params.Name }}</h1>
-	<h4>{{ .Site.Params.About| markdownify }}</h4>
+	<div>{{ .Site.Params.About| markdownify }}</div>
 
 	<div>{{ .Content }}</div>
 
@@ -29,38 +29,38 @@
 	<h3>技術メモ</h3>
 	<table>
 		<tr>
-			<td><img src="/assets/img/icons/zenn.svg" width="18" style="vertical-align: middle;"></td>
+			<td><img src="/assets/img/icons/zenn.svg" width="18" style="vertical-align: middle;" alt="Zenn logo"></td>
 			<td>&nbsp;<a href="https://zenn.dev/niccari" target="_blank">Zenn</a></td>
 		</tr>
 		<tr>
-			<td><img src="/assets/img/icons/qiita.png" width="18" style="vertical-align: middle;"></td>
+			<td><img src="/assets/img/icons/qiita.png" width="18" style="vertical-align: middle;" alt="Qiita logo"></td>
 			<td>&nbsp;<a href="https://qiita.com/niccari" target="_blank">Qiita</a></td>
 		</tr>
 	</table>
 	<h3>作ったもの</h3>
 	<table>
 		<tr>
-			<td><img srcset="/nawatai/logo.svg, /nawatai/logo.png" width=32></td>
+			<td><img srcset="/nawatai/logo.svg, /nawatai/logo.png" width=32 alt="Nawatai service logo"></td>
 			<td>&nbsp;<a href="https://nawatai-poc.vercel.app/">Nawatai: 個人向け名付けブレストサービス(α版)</a></td>
 		</tr>
 		<tr>
-			<td><img src="/private-markdown-writer/icons/Icon-192.png" width=32></td>
+			<td><img src="/private-markdown-writer/icons/Icon-192.png" width=32 alt="private-markdown-writer icon"></td>
 			<td>&nbsp;<a href="/private-markdown-writer">個人用Markdownメモアプリ</a></td>
 		</tr>
 		<tr>
-			<td><img src="/vott-replace-paths/assets/favicon.17e50649.svg" width=32></td>
+			<td><img src="/vott-replace-paths/assets/favicon.17e50649.svg" width=32 alt="vott-replace-paths logo"></td>
 			<td>&nbsp;<a href="/vott-replace-paths">VoTTプロジェクトファイル 保存パス変更ツール</a></td>
 		</tr>
 		<tr>
-			<td><i><img src="/dgraph/favicon.ico" width=32></i></td>
+			<td><i><img src="/dgraph/favicon.ico" width=32 alt="dgraph logo"></i></td>
 			<td>&nbsp;<a href="/dgraph">任意図形描画ツール</a></td>
 		</tr>
 		<tr>
-			<td><i><img src="/wwamap/favicon.ico" width=32></i></td>
+			<td><i><img src="/wwamap/favicon.ico" width=32 alt="wwamap logo"></i></td>
 			<td>&nbsp;<a href="/wwamap">WWAゲーム マップ画像作成ツール</a></td>
 		</tr>
 		<tr>
-			<td><i><img src="/fv/assets/favicon.5b29c647.ico" width=32></i></td>
+			<td><i><img src="/fv/assets/favicon.5b29c647.ico" width=32 alt="Fractal Visualizer's logo"></i></td>
 			<td>&nbsp;<a href="/fv">Fractal Visualizer for Web</a></td>
 		</tr>
 	</table>
