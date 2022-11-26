@@ -17,13 +17,13 @@
 		<tr>
 			{{ if ne .Site.Params.Resume "" }}
 			<td><i class="fas fa-file-alt" aria-hidden="true"></i></td>
-			<td>&nbsp;<a href="/resume/{{ .Site.Params.Resume }}" target="_blank">Resume</a></td>
+			<td class="iconed-link-margin"><a href="/resume/{{ .Site.Params.Resume }}" target="_blank">Resume</a></td>
 			{{ end }}
 		</tr>
 		<tr>
 			{{ if ne .Site.Params.Email "" }}
 			<td><i class="fas fa-envelope" aria-hidden="true"></i></td>
-			<td>&nbsp;<code>{{ .Site.Params.Email }}</code></td>
+			<td class="iconed-link-margin"><code>{{ .Site.Params.Email }}</code></td>
 			{{ end }}
 		</tr>
 	</table>
@@ -31,38 +31,38 @@
 	<table>
 		<tr>
 			<td><img src="/assets/img/icons/zenn.svg" width="18" height="18" style="vertical-align: middle;" alt="Zenn logo"></td>
-			<td>&nbsp;<a href="https://zenn.dev/niccari" target="_blank">Zenn</a></td>
+			<td class="iconed-link-margin"><a href="https://zenn.dev/niccari" target="_blank">Zenn</a></td>
 		</tr>
 		<tr>
 			<td><img src="/assets/img/icons/qiita.png" width="18" height="18" style="vertical-align: middle;" alt="Qiita logo"></td>
-			<td>&nbsp;<a href="https://qiita.com/niccari" target="_blank">Qiita</a></td>
+			<td class="iconed-link-margin"><a href="https://qiita.com/niccari" target="_blank">Qiita</a></td>
 		</tr>
 	</table>
 	<h2>作ったもの</h2>
 	<table>
 		<tr>
-			<td><img srcset="/nawatai/logo.svg, /nawatai/logo.png" width="32" height="32" alt="Nawatai service logo"></td>
-			<td>&nbsp;<a href="https://nawatai-poc.vercel.app/">Nawatai: 個人向け名付けブレストサービス(α版)</a></td>
+			<td class="service-icon-container"><img srcset="/nawatai/logo.svg, /nawatai/logo.png" width="32" height="32" alt="Nawatai service logo"></td>
+			<td class="iconed-link-margin"><a href="https://nawatai-poc.vercel.app/">Nawatai: 個人向け名付けブレストサービス(α版)</a></td>
 		</tr>
 		<tr>
-			<td><img src="/private-markdown-writer/icons/Icon-192.png" width="32" height="32" alt="private-markdown-writer icon"></td>
-			<td>&nbsp;<a href="/private-markdown-writer">個人用Markdownメモアプリ</a></td>
+			<td class="service-icon-container"><img src="/private-markdown-writer/icons/Icon-192.png" width="32" height="32" alt="private-markdown-writer icon"></td>
+			<td class="iconed-link-margin"><a href="/private-markdown-writer">個人用Markdownメモアプリ</a></td>
 		</tr>
 		<tr>
-			<td><img src="/vott-replace-paths/assets/favicon.17e50649.svg" width="32" height="32" alt="vott-replace-paths logo"></td>
-			<td>&nbsp;<a href="/vott-replace-paths">VoTTプロジェクトファイル 保存パス変更ツール</a></td>
+			<td class="service-icon-container"><img src="/vott-replace-paths/assets/favicon.17e50649.svg" width="32" height="32" alt="vott-replace-paths logo"></td>
+			<td class="iconed-link-margin"><a href="/vott-replace-paths">VoTTプロジェクトファイル 保存パス変更ツール</a></td>
 		</tr>
 		<tr>
-			<td><i><img src="/dgraph/favicon.ico" width="32" height="32" alt="dgraph logo"></i></td>
-			<td>&nbsp;<a href="/dgraph">任意図形描画ツール</a></td>
+			<td class="service-icon-container"><i><img src="/dgraph/favicon.ico" width="32" height="32" alt="dgraph logo"></i></td>
+			<td class="iconed-link-margin"><a href="/dgraph">任意図形描画ツール</a></td>
 		</tr>
 		<tr>
-			<td><i><img src="/wwamap/favicon.ico" width="32" height="32" alt="wwamap logo"></i></td>
-			<td>&nbsp;<a href="/wwamap">WWAゲーム マップ画像作成ツール</a></td>
+			<td class="service-icon-container"><i><img src="/wwamap/favicon.ico" width="32" height="32" alt="wwamap logo"></i></td>
+			<td class="iconed-link-margin"><a href="/wwamap">WWAゲーム マップ画像作成ツール</a></td>
 		</tr>
 		<tr>
-			<td><i><img src="/fv/assets/favicon.5b29c647.ico" width="32" height="32" alt="Fractal Visualizer's logo"></i></td>
-			<td>&nbsp;<a href="/fv">Fractal Visualizer for Web</a></td>
+			<td class="service-icon-container"><i><img src="/fv/assets/favicon.5b29c647.ico" width="32" alt="Fractal Visualizer's logo"></i></td>
+			<td class="iconed-link-margin"><a href="/fv">Fractal Visualizer for Web</a></td>
 		</tr>
 	</table>
 
