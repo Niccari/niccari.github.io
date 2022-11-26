@@ -7,6 +7,7 @@
 	<h1>{{ .Site.Params.Name }}</h1>
 	<div>{{ .Site.Params.About| markdownify }}</div>
 
+	<h2>活動など</h2>
 	<div>{{ .Content }}</div>
 
 	<table>
@@ -26,7 +27,7 @@
 			{{ end }}
 		</tr>
 	</table>
-	<h3>技術メモ</h3>
+	<h2>技術メモ</h2>
 	<table>
 		<tr>
 			<td><img src="/assets/img/icons/zenn.svg" width="18" style="vertical-align: middle;" alt="Zenn logo"></td>
@@ -37,7 +38,7 @@
 			<td>&nbsp;<a href="https://qiita.com/niccari" target="_blank">Qiita</a></td>
 		</tr>
 	</table>
-	<h3>作ったもの</h3>
+	<h2>作ったもの</h2>
 	<table>
 		<tr>
 			<td><img srcset="/nawatai/logo.svg, /nawatai/logo.png" width=32 alt="Nawatai service logo"></td>
@@ -65,7 +66,7 @@
 		</tr>
 	</table>
 
-	<h3>過去記事</h3>
+	<h2>過去記事</h2>
 
 	<div>
 
@@ -79,7 +80,7 @@
 		{{ end }}
 
 
-		<h3><a href="posts/">過去記事をもっと見る</a></h3>
+		<div><a href="posts/">過去記事をもっと見る</a></div>
 	</div>
 	{{ if ne .Site.Params.GoatCounterCode "" }}
 	<script data-goatcounter="{{ .Site.Params.GoatCounterCode }}" async src="//gc.zgo.at/count.js"></script>
