@@ -5,13 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="stylesheet" href="https://www.niccari.net/css/style.css">
-    <link rel="stylesheet" href="https://www.niccari.net/css/fonts.css">
+    <link rel="stylesheet" href="https://www.niccari.net/css/style.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://www.niccari.net/css/fonts.css" media="print" onload="this.media='all'">
     
     <title>niccari.net</title>
     <link rel="icon" type="image/png" href="https://www.niccari.net/assets/img/favicon.ico" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+        crossorigin="anonymous"
+        media="print"
+        onload="this.media='all'"
+    >
     
     <meta name="description" content="チーム開発時、複数のDockerコンテナ間をgRPCで通信するケースが出てくる。
 各コンテナをPythonで実装する場合、*pb2*.pyの共有にはどんな方法があるか？">

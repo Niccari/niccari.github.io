@@ -4,13 +4,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/css/fonts.css" media="print" onload="this.media='all'">
     <!-- End stylesheets -->
     <title>{{ .Site.Params.Name }}</title>
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+        crossorigin="anonymous"
+        media="print"
+        onload="this.media='all'"
+    >
     <!-- End theme -->
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
     <meta property="og:url" content="{{ .Permalink }}" />
