@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./assets/favicon.17e50649.svg" />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon-17e50649.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VoTTプロジェクトファイル 保存パス変更ツール</title>
     <meta property="description" content="VoTTプロジェクトファイルを、別の場所に移しても開けるように変換するツール" />
@@ -20,19 +20,18 @@
     <meta name="twitter:image" content="https://niccari.net/vott-replace-paths/ogp.jpg" />
     <meta name="twitter:description" content="VoTTプロジェクトファイルを、別の場所に移しても開けるように変換するツール" />
     <meta name="twitter:site" content="niccari1" />
-    <script type="module" crossorigin src="./assets/index.99a8c828.js"></script>
-    <link rel="stylesheet" href="./assets/index.5af8e2af.css">
+    <script type="module" crossorigin src="./assets/index-63263ddd.js"></script>
+    <link rel="stylesheet" href="./assets/index-5af8e2af.css">
   </head>
   <body>
-    <h3>VoTT プロジェクトファイル 保存パス変更ツール</h3>
+    <h1>VoTT プロジェクトファイル 保存パス変更ツール</h1>
     <div id="root">
       <p>
-        <a href="https://github.com/microsoft/VoTT" target="_blank" rel="noopener noreferrer">VoTT v2.2.0</a>以前で作成されたプロジェクトを、別の場所に移せるよう変換するツールです。<br />
-        ※ 指定したzipファイルおよび変換結果はブラウザ上でのみ処理されるため、どこにも公開されません。
+        <a href="https://github.com/microsoft/VoTT" target="_blank" rel="noopener noreferrer">VoTT</a>で作成されたプロジェクトを、別の場所に移せるよう変換するツールです。指定したzipファイルおよび変換結果はブラウザ上でのみ処理されるため、どこにも公開されません。</li>
       </p>
-      <h3>なぜ変換が必要か？</h3>
+      <h2>サポート終了について</h2>
       <p>
-        VoTTでは、各種リソースを絶対パスを基に管理しています。そのため、保存場所を変えると開けなくなります。本ツールで、移動先にて開けるようにファイル情報を書き換えます。
+        本ツールは2023年2月末を持って公開終了します。VoTTは2021年末にメンテナンスが終了しており、1年以上経過したこととリソース上の理由からとなります。
       </p>
     </div>
     <hr>
@@ -41,7 +40,7 @@
       <p>このソフトを利用する際は、JavaScriptを有効にするか、JavaScriptをサポートしているブラウザに切り替えてください。</p>
     </noscript>
     <div class="app">
-      <h3>変換設定</h3>
+      <h2>変換設定</h2>
       <div class="connectionArea">
         <label class="targetConnectionLabel">
           ターゲット接続(*.vott, *-asset.jsonファイルの保存先)
@@ -78,6 +77,6 @@
       <span id="loadingState"></span>
       <a id="downloader" href=""></a>
     </div>
-
+    
   </body>
 </html>
