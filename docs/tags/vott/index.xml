@@ -6,16 +6,15 @@
     <description>Recent content in VoTT on niccari.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 31 Dec 2021 16:00:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/tags/vott/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 31 Dec 2021 16:00:00 +0900</lastBuildDate>
+    <atom:link href="https://www.niccari.net/tags/vott/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>(2021.12.31更新) VoTTでプロジェクト、動画・画像の場所を変更してもロードできるようにする</title>
       <link>https://www.niccari.net/posts/20210905/</link>
       <pubDate>Fri, 31 Dec 2021 16:00:00 +0900</pubDate>
-      
       <guid>https://www.niccari.net/posts/20210905/</guid>
       <description>(初版作成日: 2021.09.05)
 Zennに完全移転しました。</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,116 +6,95 @@
     <description>Recent content in dev on niccari.net</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 31 Dec 2021 16:00:00 +0900</lastBuildDate><atom:link href="https://www.niccari.net/categories/dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 31 Dec 2021 16:00:00 +0900</lastBuildDate>
+    <atom:link href="https://www.niccari.net/categories/dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>(2021.12.31更新) VoTTでプロジェクト、動画・画像の場所を変更してもロードできるようにする</title>
       <link>https://www.niccari.net/posts/20210905/</link>
       <pubDate>Fri, 31 Dec 2021 16:00:00 +0900</pubDate>
-      
       <guid>https://www.niccari.net/posts/20210905/</guid>
       <description>(初版作成日: 2021.09.05)
 Zennに完全移転しました。</description>
     </item>
-    
     <item>
       <title>(供養)過去の作品をざっと掲載</title>
       <link>https://www.niccari.net/posts/20211031/</link>
       <pubDate>Sun, 31 Oct 2021 18:50:00 +0900</pubDate>
-      
       <guid>https://www.niccari.net/posts/20211031/</guid>
       <description>&lt;p&gt;ここ20年近くに渡り、個人制作していたものの一部を振り返り用に掲載します。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Android Studioで&#39;Installed Build Tools revision 31.0.0 is corrupted&#39;となるエラーの修正方法</title>
       <link>https://www.niccari.net/posts/20210906/</link>
       <pubDate>Mon, 06 Sep 2021 06:45:00 +0900</pubDate>
-      
       <guid>https://www.niccari.net/posts/20210906/</guid>
       <description>&lt;p&gt;Android 12対応でAndroid Build Tools 31.0.0をインストールすると、ビルド時に表題のエラーとなった。&lt;/p&gt;
 &lt;p&gt;本エラーはAndroid Gradle Plugin(AGP)のバージョンを7.0.0以上にすることで解消できる。&lt;/p&gt;
 &lt;p&gt;※ Stack Overflowでの回答内容を基にまとめた備忘録&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>マルチコンテナなサービス構成でgRPC in Pythonのpb2を共有する話</title>
       <link>https://www.niccari.net/posts/20210829/</link>
       <pubDate>Sun, 29 Aug 2021 13:59:00 +0900</pubDate>
-      
       <guid>https://www.niccari.net/posts/20210829/</guid>
       <description>&lt;p&gt;チーム開発時、複数のDockerコンテナ間をgRPCで通信するケースが出てくる。&lt;/p&gt;
 &lt;p&gt;各コンテナをPythonで実装する場合、*pb2*.pyの共有にはどんな方法があるか？&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>claspを使ったGAS開発フローまとめ</title>
       <link>https://www.niccari.net/posts/20210821/</link>
       <pubDate>Sat, 21 Aug 2021 15:15:00 +0900</pubDate>
-      
       <guid>https://www.niccari.net/posts/20210821/</guid>
       <description>&lt;p&gt;claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き(&lt;a href=&#34;https://github.com/Niccari/gas_ts_sample&#34;&gt;作成したサンプルコード&lt;/a&gt;)。&lt;/p&gt;
 &lt;p&gt;ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要があった。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>pandas サンプルコード実装</title>
       <link>https://www.niccari.net/posts/20210815/</link>
       <pubDate>Sun, 15 Aug 2021 21:45:00 +0900</pubDate>
-      
       <guid>https://www.niccari.net/posts/20210815/</guid>
       <description>&lt;p&gt;これまでpython上でデータ解析するときにpandasを使っていたが、&lt;/p&gt;
 &lt;p&gt;理解の確認用に&lt;a href=&#34;https://github.com/Niccari/pandas_processing_example/blob/main/pandas_processing_example.ipynb&#34;&gt;サンプルコード&lt;/a&gt;を実装した。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>(archive) google/clasp 2.4.0でpackage.jsonが必要</title>
       <link>https://www.niccari.net/posts/20210808/</link>
       <pubDate>Sun, 08 Aug 2021 18:30:00 +0900</pubDate>
-      
       <guid>https://www.niccari.net/posts/20210808/</guid>
       <description>&lt;p&gt;(21.08.15 追記): &lt;strong&gt;google/clasp 2.4.1でfix済み&lt;a href=&#34;https://github.com/google/clasp/releases/tag/v2.4.1&#34;&gt;(#840, #862)&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;google/clasp 2.4.0では、最低でも空(&lt;code&gt;{}&lt;/code&gt;)のpackage.jsonを作る必要がある。&lt;/p&gt;
 &lt;p&gt;もしくは、google/clasp 2.3.1を使うことでclasp動かない問題をバイパスできる。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>2021.05.31_(作業メモ)_MacBook Air M1でTensorflow/Keras学習テスト</title>
       <link>https://www.niccari.net/posts/20210531/</link>
       <pubDate>Mon, 31 May 2021 16:54:00 +0900</pubDate>
-      
       <guid>https://www.niccari.net/posts/20210531/</guid>
       <description>&lt;h2 id=&#34;やりたいこと&#34;&gt;やりたいこと&lt;/h2&gt;
 &lt;p&gt;M1チップ上でTensorFlow/Keras使って物体識別モデルを作る&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Azure Blob Storageから取得した動画の、Javascriptからシークできなかった話</title>
       <link>https://www.niccari.net/posts/20180929/</link>
       <pubDate>Sat, 29 Sep 2018 22:10:00 +0900</pubDate>
-      
       <guid>https://www.niccari.net/posts/20180929/</guid>
       <description>&lt;h2 id=&#34;tldr-cのプログラムなどからazure-blob-storageに対するrequst-headerのx-ms-versionを2011-08-18以降に設定するとok&#34;&gt;TL;DR C#のプログラムなどから、Azure Blob Storageに対するRequst Headerのx-ms-versionを2011-08-18以降に設定するとOK&lt;/h2&gt;
 &lt;p&gt;サーバが206 Patial Contentに対応し、ストリーミング配信されるようになるため&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>【Swift】カスタムなUITableViewの高さを固定→可変にしようとして試行錯誤した話</title>
       <link>https://www.niccari.net/posts/20180904/</link>
       <pubDate>Tue, 04 Sep 2018 19:12:34 +0900</pubDate>
-      
       <guid>https://www.niccari.net/posts/20180904/</guid>
       <description>&lt;p&gt;共通処理部でUITableViewの高さを設定すると、個別に高さ調整したときに困る話&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Macのプレビューにて、PDFをグレースケールに出来ない問題</title>
       <link>https://www.niccari.net/posts/20180825/</link>
       <pubDate>Sat, 25 Aug 2018 21:23:31 +0900</pubDate>
-      
       <guid>https://www.niccari.net/posts/20180825/</guid>
       <description>&lt;h2 id=&#34;tldr一度macのプレビューでpdf出力ファイル--pdfとして書き出すする出力したpdfを上記手順でgray-toneにする&#34;&gt;TL;DR：一度MacのプレビューでPDF出力(ファイル ＞ PDFとして書き出す)する。出力したPDFを上記手順でGray Toneにする&lt;/h2&gt;
 &lt;p&gt;一度プレビューを通してPDF出力することで、プレビューに適合したフォーマットでPDFが出力されるため&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
