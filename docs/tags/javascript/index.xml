@@ -13,17 +13,14 @@
       <link>https://www.niccari.net/posts/20210808/</link>
       <pubDate>Sun, 08 Aug 2021 18:30:00 +0900</pubDate>
       <guid>https://www.niccari.net/posts/20210808/</guid>
-      <description>&lt;p&gt;(21.08.15 追記): &lt;strong&gt;google/clasp 2.4.1でfix済み&lt;a href=&#34;https://github.com/google/clasp/releases/tag/v2.4.1&#34;&gt;(#840, #862)&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;google/clasp 2.4.0では、最低でも空(&lt;code&gt;{}&lt;/code&gt;)のpackage.jsonを作る必要がある。&lt;/p&gt;
-&lt;p&gt;もしくは、google/clasp 2.3.1を使うことでclasp動かない問題をバイパスできる。&lt;/p&gt;</description>
+      <description>&lt;p&gt;(21.08.15 追記): &lt;strong&gt;google/clasp 2.4.1でfix済み&lt;a href=&#34;https://github.com/google/clasp/releases/tag/v2.4.1&#34;&gt;(#840, #862)&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;google/clasp 2.4.0では、最低でも空(&lt;code&gt;{}&lt;/code&gt;)のpackage.jsonを作る必要がある。&lt;/p&gt;&#xA;&lt;p&gt;もしくは、google/clasp 2.3.1を使うことでclasp動かない問題をバイパスできる。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Azure Blob Storageから取得した動画の、Javascriptからシークできなかった話</title>
       <link>https://www.niccari.net/posts/20180929/</link>
       <pubDate>Sat, 29 Sep 2018 22:10:00 +0900</pubDate>
       <guid>https://www.niccari.net/posts/20180929/</guid>
-      <description>&lt;h2 id=&#34;tldr-cのプログラムなどからazure-blob-storageに対するrequst-headerのx-ms-versionを2011-08-18以降に設定するとok&#34;&gt;TL;DR C#のプログラムなどから、Azure Blob Storageに対するRequst Headerのx-ms-versionを2011-08-18以降に設定するとOK&lt;/h2&gt;
-&lt;p&gt;サーバが206 Patial Contentに対応し、ストリーミング配信されるようになるため&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;tldr-cのプログラムなどからazure-blob-storageに対するrequst-headerのx-ms-versionを2011-08-18以降に設定するとok&#34;&gt;TL;DR C#のプログラムなどから、Azure Blob Storageに対するRequst Headerのx-ms-versionを2011-08-18以降に設定するとOK&lt;/h2&gt;&#xA;&lt;p&gt;サーバが206 Patial Contentに対応し、ストリーミング配信されるようになるため&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
