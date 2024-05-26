@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>google/clasp on niccari.net</title>
+    <title>Google/Clasp on niccari.net</title>
     <link>https://www.niccari.net/tags/google/clasp/</link>
-    <description>Recent content in google/clasp on niccari.net</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Google/Clasp on niccari.net</description>
+    <generator>Hugo</generator>
     <language>ja-jp</language>
+    <lastBuildDate>Sat, 21 Aug 2021 15:15:00 +0900</lastBuildDate>
     <atom:link href="https://www.niccari.net/tags/google/clasp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>claspを使ったGAS開発フローまとめ</title>

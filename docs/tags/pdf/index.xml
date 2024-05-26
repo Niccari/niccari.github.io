@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pdf on niccari.net</title>
+    <title>Pdf on niccari.net</title>
     <link>https://www.niccari.net/tags/pdf/</link>
-    <description>Recent content in pdf on niccari.net</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Pdf on niccari.net</description>
+    <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sat, 25 Aug 2018 21:23:31 +0900</lastBuildDate>
     <atom:link href="https://www.niccari.net/tags/pdf/index.xml" rel="self" type="application/rss+xml" />

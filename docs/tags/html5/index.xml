@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>html5 on niccari.net</title>
+    <title>Html5 on niccari.net</title>
     <link>https://www.niccari.net/tags/html5/</link>
-    <description>Recent content in html5 on niccari.net</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Html5 on niccari.net</description>
+    <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sat, 29 Sep 2018 22:10:00 +0900</lastBuildDate>
     <atom:link href="https://www.niccari.net/tags/html5/index.xml" rel="self" type="application/rss+xml" />

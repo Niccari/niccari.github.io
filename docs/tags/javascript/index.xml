@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Javascript on niccari.net</title>
+    <title>JavaScript on niccari.net</title>
     <link>https://www.niccari.net/tags/javascript/</link>
-    <description>Recent content in Javascript on niccari.net</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in JavaScript on niccari.net</description>
+    <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 08 Aug 2021 18:30:00 +0900</lastBuildDate>
     <atom:link href="https://www.niccari.net/tags/javascript/index.xml" rel="self" type="application/rss+xml" />

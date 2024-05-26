@@ -60,7 +60,7 @@
     <meta property="og:site_name" content="{{ .Site.Title }}" />
     <meta property="og:title" content="{{ .Title }}" />
     <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
-    <meta property="og:image" content="{{ if hasPrefix .File.Path "post" -}}{{ path.Join "assets/img/ogp/" (print .File.BaseFileName ".png") | absURL }}{{ else -}}{{ "assets/img/logo.png" | absURL }}{{ end -}}" />
+    <meta property="og:image" content="{{ if hasPrefix .Path "/posts" -}}{{ path.Join "assets/img/ogp/" (print (path.BaseName .Path) ".png") | absURL }}{{ else -}}{{ "assets/img/logo.png" | absURL }}{{ end -}}" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="{{ .Site.Params.TwitterName }}" />

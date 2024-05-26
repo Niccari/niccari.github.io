@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>miniconda on niccari.net</title>
+    <title>Miniconda on niccari.net</title>
     <link>https://www.niccari.net/tags/miniconda/</link>
-    <description>Recent content in miniconda on niccari.net</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Miniconda on niccari.net</description>
+    <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 31 May 2021 16:54:00 +0900</lastBuildDate>
     <atom:link href="https://www.niccari.net/tags/miniconda/index.xml" rel="self" type="application/rss+xml" />

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>gRPC on niccari.net</title>
+    <title>GRPC on niccari.net</title>
     <link>https://www.niccari.net/tags/grpc/</link>
-    <description>Recent content in gRPC on niccari.net</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in GRPC on niccari.net</description>
+    <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 29 Aug 2021 13:59:00 +0900</lastBuildDate>
     <atom:link href="https://www.niccari.net/tags/grpc/index.xml" rel="self" type="application/rss+xml" />
