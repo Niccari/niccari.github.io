@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,11 +43,11 @@
         padding-left: 4px;
       }
     </style>
-    <link rel="stylesheet" href="https://www.niccari.net/css/style.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://www.niccari.net/css/fonts.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="http://localhost:1313/css/style.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="http://localhost:1313/css/fonts.css" media="print" onload="this.media='all'">
     
     <title>niccari.net</title>
-    <link rel="icon" type="image/png" href="https://www.niccari.net/assets/img/favicon.ico" />
+    <link rel="icon" type="image/png" href="http://localhost:1313/assets/img/favicon.ico" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
         crossorigin="anonymous"
@@ -56,12 +56,12 @@
     >
     
     <meta name="description" content="共通処理部でUITableViewの高さを設定すると、個別に高さ調整したときに困る話">
-    <meta property="og:url" content="https://www.niccari.net/posts/20180904/" />
+    <meta property="og:url" content="http://localhost:1313/posts/20180904/" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="niccari.net" />
     <meta property="og:title" content="【Swift】カスタムなUITableViewの高さを固定→可変にしようとして試行錯誤した話" />
     <meta property="og:description" content="共通処理部でUITableViewの高さを設定すると、個別に高さ調整したときに困る話" />
-    <meta property="og:image" content="https://www.niccari.net/assets/img/ogp/20180904.png" />
+    <meta property="og:image" content="http://localhost:1313/assets/img/ogp/20180904.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="niccari" />
@@ -76,7 +76,7 @@
   <header class="site-header">
 
     <div class="wrapper">
-      <a class="muted small" href="https://www.niccari.net/">niccari.net</a>
+      <a class="muted small" href="http://localhost:1313/">niccari.net</a>
     </div>
   </header>
 </body>
@@ -111,11 +111,11 @@
 </li>
 </ul>
 <p>PageTwoViewCellのレイアウト構成は以下の通り。両端にお知らせの写真、真ん中に本文(上)と配信日(下)が入る構成。
-<img src="https://www.niccari.net/assets/img/20180904/0.png" alt="PageTwoViewCellの構成"></p>
+<img src="http://localhost:1313/assets/img/20180904/0.png" alt="PageTwoViewCellの構成"></p>
 <p>両矢印は幅、片矢印は位置設定</p>
 <h2 id="やったこと">やったこと</h2>
 <h3 id="前準備pagetwoviewcellをxibでレイアウトしデータの反映をswiftで記載">前準備：PageTwoViewCellをxibでレイアウトし、データの反映をswiftで記載</h3>
-<p><img src="https://www.niccari.net/assets/img/20180904/1.png" alt="PageTwoViewCellをxibで設定した構成図"></p>
+<p><img src="http://localhost:1313/assets/img/20180904/1.png" alt="PageTwoViewCellをxibで設定した構成図"></p>
 <p>レイアウト上の変更点は以下の通り</p>
 <ul>
 <li>本文のbottomに配信日のTopがくっつくようConstraint追加。</li>
@@ -123,7 +123,7 @@
 <li>PageTwoViewCellの高さをxib上で固定しない</li>
 </ul>
 <h3 id="結果セルの高さが固定されておりセルが途中で切れて表示された">結果：セルの高さが固定されており、セルが途中で切れて表示された</h3>
-<p><img src="https://www.niccari.net/assets/img/20180904/2.png" alt="PageTwoViewCell セルが途中までの高さで表示"></p>
+<p><img src="http://localhost:1313/assets/img/20180904/2.png" alt="PageTwoViewCell セルが途中までの高さで表示"></p>
 <h4 id="1-予測した原因1xuitextview本文にテキスト反映後uitextviewのintrinsiccontentsizeが更新されていない">1. 予測した原因1(x)：UITextView(本文)にテキスト反映後、UITextViewのintrinsicContentSizeが更新されていない</h4>
 <p>デバッガで確認したところ、intrinsticContentSizeは更新されているが想定した値よりも小さくなっていることを確認。また、この結果が-1になっていない<a href="https://cockscomb.hatenablog.com/entry/uitextview-on-uitableview">(参考1)</a>ことからUITextViewのスクロールが正しくオフになっていることを確認 <a href="https://qiita.com/mishimay/items/619f9ce60b4fabc1612f">(参考2)</a></p>
 <h4 id="2-予測した原因2xuitextviewをsizethatfitsし計算した高さをconstraint等で設定する必要がある">2. 予測した原因2(x)：UITextViewをsizeThatFitsし、計算した高さをconstraint等で設定する必要がある？</h4>
@@ -131,7 +131,7 @@
 <p>当然ながらUITextViewの高さのconstraintとUILabel(配信日)のbottomのconstraintが干渉してしまい、結果として前者が自動削除される。無意味のため元の状態に戻した。</p>
 <h4 id="3-調査xuilabelのbottomのconstraintを一旦削除してどうなるか見てみた">3. 調査(x)：UILabelのbottomのconstraintを一旦削除してどうなるか見てみた</h4>
 <p>以下の様に、UITextViewの表示高さは広がったものの全ては表示されず、UILabelも表示されなくなった</p>
-<p><img src="https://www.niccari.net/assets/img/20180904/3.png" alt="セルのUITextViewが途中で表示されず"></p>
+<p><img src="http://localhost:1313/assets/img/20180904/3.png" alt="セルのUITextViewが途中で表示されず"></p>
 <h4 id="4-1-3で詰まったのでpagetwoviewcontrollermでtableviewheightforrowatindexpath-でcellの高さをとりあえず200pxに指定">4. 1.-3.で詰まったので、PageTwoViewController.mでtableView:heightForRowAtIndexPath: でcellの高さをとりあえず200pxに指定(△)</h4>
 <p>UITextViewに反映したテキストは全て表示された。ただし、constraintによりその高さは200 - UILabelの高さになってしまう。</p>
 <h4 id="5-問題を簡単化するためuitextview以外を削除して表示してみるx">5. 問題を簡単化するため、UITextView以外を削除して表示してみる(x)</h4>
@@ -171,10 +171,10 @@
 
 <footer>
     <div>
-        <h3><a href="https://www.niccari.net/posts">過去記事一覧に戻る</a></h3>
+        <h3><a href="http://localhost:1313/posts">過去記事一覧に戻る</a></h3>
     </div>
     <hr>
-    <p><a href="https://www.niccari.net//index.xml">RSSフィードを見る</a></p>
+    <p><a href="http://localhost:1313//index.xml">RSSフィードを見る</a></p>
 </footer>
 
 

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TypeScript on niccari.net</title>
-    <link>https://www.niccari.net/tags/typescript/</link>
+    <link>http://localhost:1313/tags/typescript/</link>
     <description>Recent content in TypeScript on niccari.net</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Fri, 31 Dec 2021 16:00:00 +0900</lastBuildDate>
-    <atom:link href="https://www.niccari.net/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>(2021.12.31更新) VoTTでプロジェクト、動画・画像の場所を変更してもロードできるようにする</title>
-      <link>https://www.niccari.net/posts/20210905/</link>
+      <link>http://localhost:1313/posts/20210905/</link>
       <pubDate>Fri, 31 Dec 2021 16:00:00 +0900</pubDate>
-      <guid>https://www.niccari.net/posts/20210905/</guid>
+      <guid>http://localhost:1313/posts/20210905/</guid>
       <description>&lt;p&gt;(初版作成日: 2021.09.05)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://zenn.dev/niccari/articles/3a3e1dd033dfc1&#34;&gt;Zenn&lt;/a&gt;に完全移転しました。&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>claspを使ったGAS開発フローまとめ</title>
-      <link>https://www.niccari.net/posts/20210821/</link>
+      <link>http://localhost:1313/posts/20210821/</link>
       <pubDate>Sat, 21 Aug 2021 15:15:00 +0900</pubDate>
-      <guid>https://www.niccari.net/posts/20210821/</guid>
+      <guid>http://localhost:1313/posts/20210821/</guid>
       <description>&lt;p&gt;claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き(&lt;a href=&#34;https://github.com/Niccari/gas_ts_sample&#34;&gt;作成したサンプルコード&lt;/a&gt;)。&lt;/p&gt;&#xA;&lt;p&gt;ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要があった。&lt;/p&gt;</description>
     </item>
   </channel>

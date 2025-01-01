@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Webアプリ on niccari.net</title>
-    <link>https://www.niccari.net/tags/web%E3%82%A2%E3%83%97%E3%83%AA/</link>
+    <link>http://localhost:1313/tags/web%E3%82%A2%E3%83%97%E3%83%AA/</link>
     <description>Recent content in Webアプリ on niccari.net</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 31 Oct 2021 18:50:00 +0900</lastBuildDate>
-    <atom:link href="https://www.niccari.net/tags/web%E3%82%A2%E3%83%97%E3%83%AA/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/web%E3%82%A2%E3%83%97%E3%83%AA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>(供養)過去の作品をざっと掲載</title>
-      <link>https://www.niccari.net/posts/20211031/</link>
+      <link>http://localhost:1313/posts/20211031/</link>
       <pubDate>Sun, 31 Oct 2021 18:50:00 +0900</pubDate>
-      <guid>https://www.niccari.net/posts/20211031/</guid>
+      <guid>http://localhost:1313/posts/20211031/</guid>
       <description>&lt;p&gt;ここ20年近くに渡り、個人制作していたものの一部を振り返り用に掲載します。&lt;/p&gt;</description>
     </item>
   </channel>
