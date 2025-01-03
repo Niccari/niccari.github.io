@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google/Clasp on niccari.net</title>
-    <link>http://localhost:1313/tags/google/clasp/</link>
+    <link>https://www.niccari.net/tags/google/clasp/</link>
     <description>Recent content in Google/Clasp on niccari.net</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sat, 21 Aug 2021 15:15:00 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/google/clasp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.niccari.net/tags/google/clasp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>claspを使ったGAS開発フローまとめ</title>
-      <link>http://localhost:1313/posts/20210821/</link>
+      <link>https://www.niccari.net/posts/20210821/</link>
       <pubDate>Sat, 21 Aug 2021 15:15:00 +0900</pubDate>
-      <guid>http://localhost:1313/posts/20210821/</guid>
+      <guid>https://www.niccari.net/posts/20210821/</guid>
       <description>&lt;p&gt;claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き(&lt;a href=&#34;https://github.com/Niccari/gas_ts_sample&#34;&gt;作成したサンプルコード&lt;/a&gt;)。&lt;/p&gt;&#xA;&lt;p&gt;ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要があった。&lt;/p&gt;</description>
     </item>
     <item>
       <title>(archive) google/clasp 2.4.0でpackage.jsonが必要</title>
-      <link>http://localhost:1313/posts/20210808/</link>
+      <link>https://www.niccari.net/posts/20210808/</link>
       <pubDate>Sun, 08 Aug 2021 18:30:00 +0900</pubDate>
-      <guid>http://localhost:1313/posts/20210808/</guid>
+      <guid>https://www.niccari.net/posts/20210808/</guid>
       <description>&lt;p&gt;(21.08.15 追記): &lt;strong&gt;google/clasp 2.4.1でfix済み&lt;a href=&#34;https://github.com/google/clasp/releases/tag/v2.4.1&#34;&gt;(#840, #862)&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;google/clasp 2.4.0では、最低でも空(&lt;code&gt;{}&lt;/code&gt;)のpackage.jsonを作る必要がある。&lt;/p&gt;&#xA;&lt;p&gt;もしくは、google/clasp 2.3.1を使うことでclasp動かない問題をバイパスできる。&lt;/p&gt;</description>
     </item>
   </channel>

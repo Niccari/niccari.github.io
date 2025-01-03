@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Azure Blob Storage on niccari.net</title>
-    <link>http://localhost:1313/tags/azure-blob-storage/</link>
+    <link>https://www.niccari.net/tags/azure-blob-storage/</link>
     <description>Recent content in Azure Blob Storage on niccari.net</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Fri, 31 Dec 2021 16:00:00 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/azure-blob-storage/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.niccari.net/tags/azure-blob-storage/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>(2021.12.31更新) VoTTでプロジェクト、動画・画像の場所を変更してもロードできるようにする</title>
-      <link>http://localhost:1313/posts/20210905/</link>
+      <link>https://www.niccari.net/posts/20210905/</link>
       <pubDate>Fri, 31 Dec 2021 16:00:00 +0900</pubDate>
-      <guid>http://localhost:1313/posts/20210905/</guid>
+      <guid>https://www.niccari.net/posts/20210905/</guid>
       <description>&lt;p&gt;(初版作成日: 2021.09.05)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://zenn.dev/niccari/articles/3a3e1dd033dfc1&#34;&gt;Zenn&lt;/a&gt;に完全移転しました。&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Azure Blob Storageから取得した動画の、Javascriptからシークできなかった話</title>
-      <link>http://localhost:1313/posts/20180929/</link>
+      <link>https://www.niccari.net/posts/20180929/</link>
       <pubDate>Sat, 29 Sep 2018 22:10:00 +0900</pubDate>
-      <guid>http://localhost:1313/posts/20180929/</guid>
+      <guid>https://www.niccari.net/posts/20180929/</guid>
       <description>&lt;h2 id=&#34;tldr-cのプログラムなどからazure-blob-storageに対するrequst-headerのx-ms-versionを2011-08-18以降に設定するとok&#34;&gt;TL;DR C#のプログラムなどから、Azure Blob Storageに対するRequst Headerのx-ms-versionを2011-08-18以降に設定するとOK&lt;/h2&gt;&#xA;&lt;p&gt;サーバが206 Patial Contentに対応し、ストリーミング配信されるようになるため&lt;/p&gt;</description>
     </item>
   </channel>

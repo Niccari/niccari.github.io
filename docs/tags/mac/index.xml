@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac on niccari.net</title>
-    <link>http://localhost:1313/tags/mac/</link>
+    <link>https://www.niccari.net/tags/mac/</link>
     <description>Recent content in Mac on niccari.net</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sat, 25 Aug 2018 21:23:31 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.niccari.net/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Macのプレビューにて、PDFをグレースケールに出来ない問題</title>
-      <link>http://localhost:1313/posts/20180825/</link>
+      <link>https://www.niccari.net/posts/20180825/</link>
       <pubDate>Sat, 25 Aug 2018 21:23:31 +0900</pubDate>
-      <guid>http://localhost:1313/posts/20180825/</guid>
+      <guid>https://www.niccari.net/posts/20180825/</guid>
       <description>&lt;h2 id=&#34;tldr一度macのプレビューでpdf出力ファイル--pdfとして書き出すする出力したpdfを上記手順でgray-toneにする&#34;&gt;TL;DR：一度MacのプレビューでPDF出力(ファイル ＞ PDFとして書き出す)する。出力したPDFを上記手順でGray Toneにする&lt;/h2&gt;&#xA;&lt;p&gt;一度プレビューを通してPDF出力することで、プレビューに適合したフォーマットでPDFが出力されるため&lt;/p&gt;</description>
     </item>
   </channel>
