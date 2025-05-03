@@ -1,1 +1,1 @@
-{"name":"任意図形描画ツール","short_name":"dgraph","start_url":"./","display":"standalone","background_color":"#212121","lang":"en","scope":"./","icons":[{"src":"logo192.png","type":"image/png","sizes":"192x192"},{"src":"logo512.png","type":"image/png","sizes":"512x512"}],"theme_color":"#212121"}
+{"name":"任意図形描画ツール","short_name":"dgraph","start_url":"./","display":"standalone","background_color":"#212121","theme_color":"#212121","lang":"en","scope":"./","icons":[{"src":"logo192.png","type":"image/png","sizes":"192x192"},{"src":"logo512.png","type":"image/png","sizes":"512x512"}]}

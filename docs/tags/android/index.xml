@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Android on niccari.net</title>
-    <link>http://localhost:1313/tags/android/</link>
+    <link>https://www.niccari.net/tags/android/</link>
     <description>Recent content in Android on niccari.net</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 31 Oct 2021 18:50:00 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.niccari.net/tags/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>(供養)過去の作品をざっと掲載</title>
-      <link>http://localhost:1313/posts/20211031/</link>
+      <link>https://www.niccari.net/posts/20211031/</link>
       <pubDate>Sun, 31 Oct 2021 18:50:00 +0900</pubDate>
-      <guid>http://localhost:1313/posts/20211031/</guid>
+      <guid>https://www.niccari.net/posts/20211031/</guid>
       <description>&lt;p&gt;ここ20年近くに渡り、個人制作していたものの一部を振り返り用に掲載します。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Android Studioで&#39;Installed Build Tools revision 31.0.0 is corrupted&#39;となるエラーの修正方法</title>
-      <link>http://localhost:1313/posts/20210906/</link>
+      <link>https://www.niccari.net/posts/20210906/</link>
       <pubDate>Mon, 06 Sep 2021 06:45:00 +0900</pubDate>
-      <guid>http://localhost:1313/posts/20210906/</guid>
+      <guid>https://www.niccari.net/posts/20210906/</guid>
       <description>&lt;p&gt;Android 12対応でAndroid Build Tools 31.0.0をインストールすると、ビルド時に表題のエラーとなった。&lt;/p&gt;&#xA;&lt;p&gt;本エラーはAndroid Gradle Plugin(AGP)のバージョンを7.0.0以上にすることで解消できる。&lt;/p&gt;&#xA;&lt;p&gt;※ Stack Overflowでの回答内容を基にまとめた備忘録&lt;/p&gt;</description>
     </item>
   </channel>

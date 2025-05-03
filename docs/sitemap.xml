@@ -2,145 +2,145 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/20210905/</loc>
+    <loc>https://www.niccari.net/posts/20210905/</loc>
     <lastmod>2021-12-31T16:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/azure-blob-storage/</loc>
+    <loc>https://www.niccari.net/tags/azure-blob-storage/</loc>
     <lastmod>2021-12-31T16:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://www.niccari.net/categories/</loc>
     <lastmod>2021-12-31T16:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/dev/</loc>
+    <loc>https://www.niccari.net/categories/dev/</loc>
     <lastmod>2021-12-31T16:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://www.niccari.net/</loc>
     <lastmod>2021-12-31T16:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://www.niccari.net/posts/</loc>
     <lastmod>2021-12-31T16:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
+    <loc>https://www.niccari.net/tags/python/</loc>
     <lastmod>2021-12-31T16:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://www.niccari.net/tags/</loc>
     <lastmod>2021-12-31T16:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/typescript/</loc>
+    <loc>https://www.niccari.net/tags/typescript/</loc>
     <lastmod>2021-12-31T16:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/vott/</loc>
+    <loc>https://www.niccari.net/tags/vott/</loc>
     <lastmod>2021-12-31T16:00:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/20211031/</loc>
+    <loc>https://www.niccari.net/posts/20211031/</loc>
     <lastmod>2021-10-31T18:50:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/adobe-flash/</loc>
+    <loc>https://www.niccari.net/tags/adobe-flash/</loc>
     <lastmod>2021-10-31T18:50:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/android/</loc>
+    <loc>https://www.niccari.net/tags/android/</loc>
     <lastmod>2021-10-31T18:50:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/web%E3%82%A2%E3%83%97%E3%83%AA/</loc>
+    <loc>https://www.niccari.net/tags/web%E3%82%A2%E3%83%97%E3%83%AA/</loc>
     <lastmod>2021-10-31T18:50:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E3%82%B2%E3%83%BC%E3%83%A0/</loc>
+    <loc>https://www.niccari.net/tags/%E3%82%B2%E3%83%BC%E3%83%A0/</loc>
     <lastmod>2021-10-31T18:50:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/</loc>
+    <loc>https://www.niccari.net/tags/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/</loc>
     <lastmod>2021-10-31T18:50:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/android-studio/</loc>
+    <loc>https://www.niccari.net/tags/android-studio/</loc>
     <lastmod>2021-09-06T06:45:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/20210906/</loc>
+    <loc>https://www.niccari.net/posts/20210906/</loc>
     <lastmod>2021-09-06T06:45:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/gradle/</loc>
+    <loc>https://www.niccari.net/tags/gradle/</loc>
     <lastmod>2021-09-06T06:45:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/docker/</loc>
+    <loc>https://www.niccari.net/tags/docker/</loc>
     <lastmod>2021-08-29T13:59:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/grpc/</loc>
+    <loc>https://www.niccari.net/tags/grpc/</loc>
     <lastmod>2021-08-29T13:59:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/20210829/</loc>
+    <loc>https://www.niccari.net/posts/20210829/</loc>
     <lastmod>2021-08-29T13:59:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/20210821/</loc>
+    <loc>https://www.niccari.net/posts/20210821/</loc>
     <lastmod>2021-08-21T15:15:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/gas/</loc>
+    <loc>https://www.niccari.net/tags/gas/</loc>
     <lastmod>2021-08-21T15:15:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/google-app-scripts/</loc>
+    <loc>https://www.niccari.net/tags/google-app-scripts/</loc>
     <lastmod>2021-08-21T15:15:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/google/clasp/</loc>
+    <loc>https://www.niccari.net/tags/google/clasp/</loc>
     <lastmod>2021-08-21T15:15:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/numpy/</loc>
+    <loc>https://www.niccari.net/tags/numpy/</loc>
     <lastmod>2021-08-15T21:45:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pandas/</loc>
+    <loc>https://www.niccari.net/tags/pandas/</loc>
     <lastmod>2021-08-15T21:45:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/20210815/</loc>
+    <loc>https://www.niccari.net/posts/20210815/</loc>
     <lastmod>2021-08-15T21:45:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/20210808/</loc>
+    <loc>https://www.niccari.net/posts/20210808/</loc>
     <lastmod>2021-08-08T18:30:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/javascript/</loc>
+    <loc>https://www.niccari.net/tags/javascript/</loc>
     <lastmod>2021-08-08T18:30:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/20210531/</loc>
+    <loc>https://www.niccari.net/posts/20210531/</loc>
     <lastmod>2021-05-31T16:54:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/keras/</loc>
+    <loc>https://www.niccari.net/tags/keras/</loc>
     <lastmod>2021-05-31T16:54:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/macbook-air-m1/</loc>
+    <loc>https://www.niccari.net/tags/macbook-air-m1/</loc>
     <lastmod>2021-05-31T16:54:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/miniconda/</loc>
+    <loc>https://www.niccari.net/tags/miniconda/</loc>
     <lastmod>2021-05-31T16:54:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tensorflow/</loc>
+    <loc>https://www.niccari.net/tags/tensorflow/</loc>
     <lastmod>2021-05-31T16:54:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/20180929/</loc>
+    <loc>https://www.niccari.net/posts/20180929/</loc>
     <lastmod>2018-09-29T22:10:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/html5/</loc>
+    <loc>https://www.niccari.net/tags/html5/</loc>
     <lastmod>2018-09-29T22:10:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/streaming/</loc>
+    <loc>https://www.niccari.net/tags/streaming/</loc>
     <lastmod>2018-09-29T22:10:00+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/20180904/</loc>
+    <loc>https://www.niccari.net/posts/20180904/</loc>
     <lastmod>2018-09-04T19:12:34+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ios/</loc>
+    <loc>https://www.niccari.net/tags/ios/</loc>
     <lastmod>2018-09-04T19:12:34+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/swift/</loc>
+    <loc>https://www.niccari.net/tags/swift/</loc>
     <lastmod>2018-09-04T19:12:34+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/uitableview/</loc>
+    <loc>https://www.niccari.net/tags/uitableview/</loc>
     <lastmod>2018-09-04T19:12:34+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/mac/</loc>
+    <loc>https://www.niccari.net/tags/mac/</loc>
     <lastmod>2018-08-25T21:23:31+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/20180825/</loc>
+    <loc>https://www.niccari.net/posts/20180825/</loc>
     <lastmod>2018-08-25T21:23:31+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pdf/</loc>
+    <loc>https://www.niccari.net/tags/pdf/</loc>
     <lastmod>2018-08-25T21:23:31+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/preview/</loc>
+    <loc>https://www.niccari.net/tags/preview/</loc>
     <lastmod>2018-08-25T21:23:31+09:00</lastmod>
   </url>
 </urlset>

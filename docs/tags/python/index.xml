@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on niccari.net</title>
-    <link>http://localhost:1313/tags/python/</link>
+    <link>https://www.niccari.net/tags/python/</link>
     <description>Recent content in Python on niccari.net</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Fri, 31 Dec 2021 16:00:00 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.niccari.net/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>(2021.12.31更新) VoTTでプロジェクト、動画・画像の場所を変更してもロードできるようにする</title>
-      <link>http://localhost:1313/posts/20210905/</link>
+      <link>https://www.niccari.net/posts/20210905/</link>
       <pubDate>Fri, 31 Dec 2021 16:00:00 +0900</pubDate>
-      <guid>http://localhost:1313/posts/20210905/</guid>
+      <guid>https://www.niccari.net/posts/20210905/</guid>
       <description>&lt;p&gt;(初版作成日: 2021.09.05)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://zenn.dev/niccari/articles/3a3e1dd033dfc1&#34;&gt;Zenn&lt;/a&gt;に完全移転しました。&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>マルチコンテナなサービス構成でgRPC in Pythonのpb2を共有する話</title>
-      <link>http://localhost:1313/posts/20210829/</link>
+      <link>https://www.niccari.net/posts/20210829/</link>
       <pubDate>Sun, 29 Aug 2021 13:59:00 +0900</pubDate>
-      <guid>http://localhost:1313/posts/20210829/</guid>
+      <guid>https://www.niccari.net/posts/20210829/</guid>
       <description>&lt;p&gt;チーム開発時、複数のDockerコンテナ間をgRPCで通信するケースが出てくる。&lt;/p&gt;&#xA;&lt;p&gt;各コンテナをPythonで実装する場合、*pb2*.pyの共有にはどんな方法があるか？&lt;/p&gt;</description>
     </item>
     <item>
       <title>pandas サンプルコード実装</title>
-      <link>http://localhost:1313/posts/20210815/</link>
+      <link>https://www.niccari.net/posts/20210815/</link>
       <pubDate>Sun, 15 Aug 2021 21:45:00 +0900</pubDate>
-      <guid>http://localhost:1313/posts/20210815/</guid>
+      <guid>https://www.niccari.net/posts/20210815/</guid>
       <description>&lt;p&gt;これまでpython上でデータ解析するときにpandasを使っていたが、&lt;/p&gt;&#xA;&lt;p&gt;理解の確認用に&lt;a href=&#34;https://github.com/Niccari/pandas_processing_example/blob/main/pandas_processing_example.ipynb&#34;&gt;サンプルコード&lt;/a&gt;を実装した。&lt;/p&gt;</description>
     </item>
   </channel>
