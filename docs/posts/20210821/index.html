@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,11 +43,11 @@
         padding-left: 4px;
       }
     </style>
-    <link rel="stylesheet" href="https://www.niccari.net/css/style.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://www.niccari.net/css/fonts.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="http://localhost:1313/css/style.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="http://localhost:1313/css/fonts.css" media="print" onload="this.media='all'">
     
     <title>niccari.net</title>
-    <link rel="icon" type="image/png" href="https://www.niccari.net/assets/img/favicon.ico" />
+    <link rel="icon" type="image/png" href="http://localhost:1313/assets/img/favicon.ico" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
         crossorigin="anonymous"
@@ -57,13 +57,13 @@
     
     <meta name="description" content="claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き(作成したサンプルコード)。
 ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要があった。">
-    <meta property="og:url" content="https://www.niccari.net/posts/20210821/" />
+    <meta property="og:url" content="http://localhost:1313/posts/20210821/" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="niccari.net" />
     <meta property="og:title" content="claspを使ったGAS開発フローまとめ" />
     <meta property="og:description" content="claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き(作成したサンプルコード)。
 ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要があった。" />
-    <meta property="og:image" content="https://www.niccari.net/assets/img/ogp/20210821.png" />
+    <meta property="og:image" content="http://localhost:1313/assets/img/ogp/20210821.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="niccari" />
@@ -78,7 +78,7 @@
   <header class="site-header">
 
     <div class="wrapper">
-      <a class="muted small" href="https://www.niccari.net/">niccari.net</a>
+      <a class="muted small" href="http://localhost:1313/">niccari.net</a>
     </div>
   </header>
 </body>
@@ -91,7 +91,7 @@
 <p>claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き(<a href="https://github.com/Niccari/gas_ts_sample">作成したサンプルコード</a>)。</p>
 <p>ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要があった。</p>
 <h2 id="gas-claspによる開発フローのイメージ">GAS, claspによる開発フローのイメージ</h2>
-<p><img src="https://www.niccari.net/assets/img/20210821/gas_clasp_arch.png" alt="GAS, claspおよび関連するサービスの操作イメージ"></p>
+<p><img src="http://localhost:1313/assets/img/20210821/gas_clasp_arch.png" alt="GAS, claspおよび関連するサービスの操作イメージ"></p>
 <p>※ <a href="https://www.npmjs.com/package/@google/clasp">clasp</a>はnpmによりグローバルインストール済みの想定。環境構築はZenn, Qiita等にすでに記事があるので省略。</p>
 <p>開発は概ね以下のフローになる。</p>
 <ol start="0">
@@ -202,8 +202,8 @@
 <p>スコープ変更に対応したスクリプトを書き、pushする。</p>
 </li>
 </ol>
-<p><img src="https://www.niccari.net/assets/img/20210821/add_scope.png" alt="appsscript.json oauthScopesにformsとカレンダーのfeeds追加"></p>
-<p><img src="https://www.niccari.net/assets/img/20210821/add_scope_result.png" alt="認証許可時に、oauthScopesで追加した項目が追加表示される"></p>
+<p><img src="http://localhost:1313/assets/img/20210821/add_scope.png" alt="appsscript.json oauthScopesにformsとカレンダーのfeeds追加"></p>
+<p><img src="http://localhost:1313/assets/img/20210821/add_scope_result.png" alt="認証許可時に、oauthScopesで追加した項目が追加表示される"></p>
 <h3 id="clasprcjsonについてexpiry_dateが指定されているが都度再認証が必要か">.clasprc.jsonについて、expiry_dateが指定されているが、都度再認証が必要か？</h3>
 <p>不要。</p>
 <p>確かにアクセストークンは1時間で期限切れになるものの、同時にrefresh_tokenが指定されている。refresh_tokenにより、トークンが切れたら期限が更新されたアクセストークンに更新されるようになっている。</p>
@@ -211,10 +211,10 @@
 
 <footer>
     <div>
-        <h3><a href="https://www.niccari.net/posts">過去記事一覧に戻る</a></h3>
+        <h3><a href="http://localhost:1313/posts">過去記事一覧に戻る</a></h3>
     </div>
     <hr>
-    <p><a href="https://www.niccari.net//index.xml">RSSフィードを見る</a></p>
+    <p><a href="http://localhost:1313//index.xml">RSSフィードを見る</a></p>
 </footer>
 
 

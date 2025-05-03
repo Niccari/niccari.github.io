@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on niccari.net</title>
-    <link>https://www.niccari.net/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on niccari.net</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Fri, 31 Dec 2021 16:00:00 +0900</lastBuildDate>
-    <atom:link href="https://www.niccari.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dev</title>
-      <link>https://www.niccari.net/categories/dev/</link>
+      <link>http://localhost:1313/categories/dev/</link>
       <pubDate>Fri, 31 Dec 2021 16:00:00 +0900</pubDate>
-      <guid>https://www.niccari.net/categories/dev/</guid>
+      <guid>http://localhost:1313/categories/dev/</guid>
       <description></description>
     </item>
   </channel>
