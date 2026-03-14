@@ -120,9 +120,9 @@
 <ol>
 <li>proto/ にコンパイル・pb2共有用のshell scriptを追加する。本scriptでは、protoをコンパイル後*pb2*.pyを各サービスに展開する。</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -145,18 +145,18 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>proto_sub1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub1&#34;</span>
 </span></span><span style="display:flex;"><span>proto_sub2<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub2&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># compile *.proto</span>
 </span></span><span style="display:flex;"><span>python3 -m grpc_tools.protoc <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span>.proto --proto_path<span style="color:#f92672">=</span>. <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --python_out<span style="color:#f92672">=</span>. --grpc_python_out<span style="color:#f92672">=</span>.
+</span></span></span><span style="display:flex;"><span>    <span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span>.proto --proto_path<span style="color:#f92672">=</span>. <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --python_out<span style="color:#f92672">=</span>. --grpc_python_out<span style="color:#f92672">=</span>.
 </span></span><span style="display:flex;"><span>python3 -m grpc_tools.protoc <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span>.proto --proto_path<span style="color:#f92672">=</span>. <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --python_out<span style="color:#f92672">=</span>. --grpc_python_out<span style="color:#f92672">=</span>.
+</span></span></span><span style="display:flex;"><span>    <span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span>.proto --proto_path<span style="color:#f92672">=</span>. <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --python_out<span style="color:#f92672">=</span>. --grpc_python_out<span style="color:#f92672">=</span>.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># move pb2 to each service</span>
 </span></span><span style="display:flex;"><span>cp <span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span>*pb2*.py ../service_main
@@ -190,9 +190,9 @@
 - interface_main_sub1.proto
 - interface_main_sub2.proto
 </code></pre><p>__init__.pyについては空でよい。setup.pyは以下のようにsetup関数を実行するようにする。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -204,7 +204,7 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> setuptools <span style="color:#f92672">import</span> setup
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> setuptools <span style="color:#f92672">import</span> setup
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>setup(
 </span></span><span style="display:flex;"><span>    name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ライブラリ名&#39;</span>,
@@ -219,9 +219,9 @@
 </div><ol start="2">
 <li>proto/ にコンパイル・pb2共有用のshell scriptを追加。本scriptでは、protoをコンパイル後*pb2*.pyをライブラリにする。ライブラリを各サービスに展開する。</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -256,18 +256,18 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>proto_sub1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub1&#34;</span>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>proto_sub1<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub1&#34;</span>
 </span></span><span style="display:flex;"><span>proto_sub2<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sub2&#34;</span>
 </span></span><span style="display:flex;"><span>lib_sub1_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./(sub1向けライブラリ名)&#34;</span>
 </span></span><span style="display:flex;"><span>lib_sub2_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./(sub2向けライブラリ名)&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># compile *.proto</span>
 </span></span><span style="display:flex;"><span>python3 -m grpc_tools.protoc <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span>.proto --proto_path<span style="color:#f92672">=</span>. <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --python_out<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>lib_sub1_path<span style="color:#e6db74">}</span> --grpc_python_out<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>lib_sub1_path<span style="color:#e6db74">}</span>
+</span></span></span><span style="display:flex;"><span>    <span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span>.proto --proto_path<span style="color:#f92672">=</span>. <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --python_out<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>lib_sub1_path<span style="color:#e6db74">}</span> --grpc_python_out<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>lib_sub1_path<span style="color:#e6db74">}</span>
 </span></span><span style="display:flex;"><span>    python3 -m grpc_tools.protoc <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span>.proto --proto_path<span style="color:#f92672">=</span>. <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --python_out<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>lib_sub2_path<span style="color:#e6db74">}</span> --grpc_python_out<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>lib_sub2_path<span style="color:#e6db74">}</span>
+</span></span></span><span style="display:flex;"><span>    <span style="color:#e6db74">${</span>proto_sub2<span style="color:#e6db74">}</span>.proto --proto_path<span style="color:#f92672">=</span>. <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    --python_out<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>lib_sub2_path<span style="color:#e6db74">}</span> --grpc_python_out<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>lib_sub2_path<span style="color:#e6db74">}</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Make pb2 importable</span>
 </span></span><span style="display:flex;"><span>sed -i <span style="color:#e6db74">&#39;&#39;</span> -e <span style="color:#e6db74">&#34;s/^import </span><span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span><span style="color:#e6db74">_pb2/from . import </span><span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span><span style="color:#e6db74">_pb2/&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>lib_sub1_path<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>proto_sub1<span style="color:#e6db74">}</span><span style="color:#e6db74">_pb2_grpc.py&#34;</span>
