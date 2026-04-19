@@ -16,13 +16,6 @@
       <description>&lt;p&gt;(初版作成日: 2021.09.05)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://zenn.dev/niccari/articles/3a3e1dd033dfc1&#34;&gt;Zenn&lt;/a&gt;に完全移転しました。&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>(供養)過去の作品をざっと掲載</title>
-      <link>https://www.niccari.net/posts/20211031/</link>
-      <pubDate>Sun, 31 Oct 2021 18:50:00 +0900</pubDate>
-      <guid>https://www.niccari.net/posts/20211031/</guid>
-      <description>&lt;p&gt;ここ20年近くに渡り、個人制作していたものの一部を振り返り用に掲載します。&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Android Studioで&#39;Installed Build Tools revision 31.0.0 is corrupted&#39;となるエラーの修正方法</title>
       <link>https://www.niccari.net/posts/20210906/</link>
       <pubDate>Mon, 06 Sep 2021 06:45:00 +0900</pubDate>
@@ -42,13 +35,6 @@
       <pubDate>Sat, 21 Aug 2021 15:15:00 +0900</pubDate>
       <guid>https://www.niccari.net/posts/20210821/</guid>
       <description>&lt;p&gt;claspとTypeScript使ってのGoogle App Scripts(以後、GAS)開発を試した件についてメモ書き(&lt;a href=&#34;https://github.com/Niccari/gas_ts_sample&#34;&gt;作成したサンプルコード&lt;/a&gt;)。&lt;/p&gt;&#xA;&lt;p&gt;ローカルでコードを動かすために複数ステップ踏む必要があり、認証関連を理解しておく必要があった。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>pandas サンプルコード実装</title>
-      <link>https://www.niccari.net/posts/20210815/</link>
-      <pubDate>Sun, 15 Aug 2021 21:45:00 +0900</pubDate>
-      <guid>https://www.niccari.net/posts/20210815/</guid>
-      <description>&lt;p&gt;これまでpython上でデータ解析するときにpandasを使っていたが、&lt;/p&gt;&#xA;&lt;p&gt;理解の確認用に&lt;a href=&#34;https://github.com/Niccari/pandas_processing_example/blob/main/pandas_processing_example.ipynb&#34;&gt;サンプルコード&lt;/a&gt;を実装した。&lt;/p&gt;</description>
     </item>
     <item>
       <title>(archive) google/clasp 2.4.0でpackage.jsonが必要</title>

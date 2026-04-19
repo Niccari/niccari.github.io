@@ -37,38 +37,10 @@
       <description></description>
     </item>
     <item>
-      <title>Adobe Flash</title>
-      <link>https://www.niccari.net/tags/adobe-flash/</link>
-      <pubDate>Sun, 31 Oct 2021 18:50:00 +0900</pubDate>
-      <guid>https://www.niccari.net/tags/adobe-flash/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Android</title>
       <link>https://www.niccari.net/tags/android/</link>
-      <pubDate>Sun, 31 Oct 2021 18:50:00 +0900</pubDate>
+      <pubDate>Mon, 06 Sep 2021 06:45:00 +0900</pubDate>
       <guid>https://www.niccari.net/tags/android/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Webアプリ</title>
-      <link>https://www.niccari.net/tags/web%E3%82%A2%E3%83%97%E3%83%AA/</link>
-      <pubDate>Sun, 31 Oct 2021 18:50:00 +0900</pubDate>
-      <guid>https://www.niccari.net/tags/web%E3%82%A2%E3%83%97%E3%83%AA/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ゲーム</title>
-      <link>https://www.niccari.net/tags/%E3%82%B2%E3%83%BC%E3%83%A0/</link>
-      <pubDate>Sun, 31 Oct 2021 18:50:00 +0900</pubDate>
-      <guid>https://www.niccari.net/tags/%E3%82%B2%E3%83%BC%E3%83%A0/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>電子工作</title>
-      <link>https://www.niccari.net/tags/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/</link>
-      <pubDate>Sun, 31 Oct 2021 18:50:00 +0900</pubDate>
-      <guid>https://www.niccari.net/tags/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C/</guid>
       <description></description>
     </item>
     <item>
@@ -121,21 +93,7 @@
       <description></description>
     </item>
     <item>
-      <title>Numpy</title>
-      <link>https://www.niccari.net/tags/numpy/</link>
-      <pubDate>Sun, 15 Aug 2021 21:45:00 +0900</pubDate>
-      <guid>https://www.niccari.net/tags/numpy/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Pandas</title>
-      <link>https://www.niccari.net/tags/pandas/</link>
-      <pubDate>Sun, 15 Aug 2021 21:45:00 +0900</pubDate>
-      <guid>https://www.niccari.net/tags/pandas/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Javascript</title>
+      <title>JavaScript</title>
       <link>https://www.niccari.net/tags/javascript/</link>
       <pubDate>Sun, 08 Aug 2021 18:30:00 +0900</pubDate>
       <guid>https://www.niccari.net/tags/javascript/</guid>
