@@ -129,40 +129,40 @@
 <h2 id="認証関連のメモ">認証関連のメモ</h2>
 <h3 id="グローバルなclasprcjsonclaspの認証とローカルなclasprcjsongasプロジェクトの認証の違いは">グローバルな.clasprc.json(claspの認証)とローカルな.clasprc.json(GASプロジェクトの認証)の違いは？</h3>
 <table>
-  <thead>
-      <tr>
-          <th>項目</th>
-          <th>claspの認証</th>
-          <th>GASプロジェクトの認証</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>区分</td>
-          <td>claspのGoogleアカウントへのアクセストークン</td>
-          <td>GASアプリのGoogleアカウントへのアクセストークン</td>
-      </tr>
-      <tr>
-          <td>役割</td>
-          <td>clasp CLIがGoogle Drive上にあるGASプロジェクトに対し作成・操作できるようにする</td>
-          <td>アプリをローカルで実行できるようにする。アプリが使うAPI(例えばSheets API)へのアクセス権限も取り持つ</td>
-      </tr>
-      <tr>
-          <td>適用範囲</td>
-          <td>どのGASプロジェクトにも適用される</td>
-          <td>特定のGASプロジェクトのみ適用される</td>
-      </tr>
-      <tr>
-          <td>ユーザ変更後の再認証</td>
-          <td>必要</td>
-          <td>必要</td>
-      </tr>
-      <tr>
-          <td>スコープ変更後の再認証</td>
-          <td>-</td>
-          <td>必要</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>項目</th>
+					<th>claspの認証</th>
+					<th>GASプロジェクトの認証</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>区分</td>
+					<td>claspのGoogleアカウントへのアクセストークン</td>
+					<td>GASアプリのGoogleアカウントへのアクセストークン</td>
+			</tr>
+			<tr>
+					<td>役割</td>
+					<td>clasp CLIがGoogle Drive上にあるGASプロジェクトに対し作成・操作できるようにする</td>
+					<td>アプリをローカルで実行できるようにする。アプリが使うAPI(例えばSheets API)へのアクセス権限も取り持つ</td>
+			</tr>
+			<tr>
+					<td>適用範囲</td>
+					<td>どのGASプロジェクトにも適用される</td>
+					<td>特定のGASプロジェクトのみ適用される</td>
+			</tr>
+			<tr>
+					<td>ユーザ変更後の再認証</td>
+					<td>必要</td>
+					<td>必要</td>
+			</tr>
+			<tr>
+					<td>スコープ変更後の再認証</td>
+					<td>-</td>
+					<td>必要</td>
+			</tr>
+	</tbody>
 </table>
 <h3 id="再ログインが必要なタイミングは">再ログインが必要なタイミングは？</h3>
 <p>以下の2ケース。</p>
